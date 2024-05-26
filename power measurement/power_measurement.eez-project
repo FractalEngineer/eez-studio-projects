@@ -1,0 +1,3477 @@
+{
+  "objID": "6666cd76-f969-5646-9e7b-e39d750cc7d9",
+  "settings": {
+    "objID": "e007d988-9fba-797d-72e9-efc33ca6d05c",
+    "general": {
+      "objID": "fd434352-2277-c4a8-e87e-e96cfcbf2305",
+      "projectVersion": "v3",
+      "projectType": "dashboard",
+      "extensions": [],
+      "imports": [],
+      "colorFormat": "RGB",
+      "resourceFiles": []
+    },
+    "build": {
+      "objID": "72794a43-a0fc-13c2-7eb5-67dd952141a4",
+      "configurations": [
+        {
+          "objID": "bba0546c-06b8-604d-c43e-ecf1963e7492",
+          "name": "Default"
+        }
+      ],
+      "files": [],
+      "lvglInclude": "lvgl/lvgl.h"
+    }
+  },
+  "variables": {
+    "objID": "c6c71e16-53e1-217f-d03b-cef56c6b037a",
+    "globalVariables": [
+      {
+        "objID": "94efb38a-92c2-460c-dde5-51b77039c539",
+        "name": "PSU",
+        "description": "Motech LPS-505N",
+        "type": "object:Instrument",
+        "defaultValue": "null",
+        "persistent": true
+      },
+      {
+        "objID": "b6a577cb-096a-42ed-e0cd-f36c61e9beef",
+        "name": "LOAD",
+        "type": "object:Instrument",
+        "defaultValue": "null",
+        "persistent": true
+      },
+      {
+        "objID": "6244e3af-0bba-422c-948b-64cc479ec21b",
+        "name": "SCOPE",
+        "type": "object:Instrument",
+        "defaultValue": "null",
+        "persistent": false
+      },
+      {
+        "objID": "b053478f-462c-4998-b053-f8db7add02a7",
+        "name": "psu_test_channel",
+        "type": "integer",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "10155e0a-3461-4789-d08b-f36aed1b80c9",
+        "name": "psu_aux_channel",
+        "type": "integer",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "3b4d222d-5722-4a9a-a634-92e56bdbd748",
+        "name": "psu_serial",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "5a43303f-2ea3-4bc7-ac88-5a5264dfcb44",
+        "name": "psu_parallel",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "a29c9207-3141-4262-868c-84329f205686",
+        "name": "volt_aux",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Aux Channel\",\n  value: 1,\n  unit: \"V\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 32\n}",
+        "persistent": false
+      },
+      {
+        "objID": "e70fa8d1-67fb-401f-9d1e-b9899aa263ff",
+        "name": "volt_start",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Start Voltage\",\n  value: 4.35,\n  unit: \"V\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 32\n}",
+        "persistent": false
+      },
+      {
+        "objID": "948e8ecb-68b1-407c-82ce-4cabf9ae5b04",
+        "name": "volt_variable",
+        "type": "float",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "88f83671-6c06-4525-9ad3-39a2511c9603",
+        "name": "volt_end",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"End Voltage\",\n  value: 1.5,\n  unit: \"V\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 32\n}",
+        "persistent": false
+      },
+      {
+        "objID": "d4f6c62b-6adb-458a-f569-4f02ac81632d",
+        "name": "current_max",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Max Current\",\n  value: 3,\n  unit: \"A\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 3\n}",
+        "persistent": false
+      },
+      {
+        "objID": "eb480f86-12ed-43ae-f16b-47ca9dac2f0c",
+        "name": "volt_step",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Volt Step\",\n  value: 0.1,\n  unit: \"V\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 999,\n}",
+        "persistent": false
+      },
+      {
+        "objID": "1c5bbd50-e67f-48a2-a737-e8e9e2fa964b",
+        "name": "step_delay",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Step Delay\",\n  value: 5,\n  unit: \"s\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 999\n}",
+        "persistent": false
+      },
+      {
+        "objID": "16105e9c-0a81-448f-d6ba-f80ba9d1f664",
+        "name": "load_mode",
+        "type": "integer",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "22df5c1d-b887-49d3-8897-84b264639e15",
+        "name": "load_current",
+        "type": "float",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "a55dd6bc-a6d5-47b5-ca0c-2a7967db75fb",
+        "name": "load_resistance",
+        "type": "float",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "cc5197f1-160d-45b7-80f5-4ef589eebdab",
+        "name": "load_voltage",
+        "type": "float",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "79515786-f7ef-4503-add9-d6f594bfabdf",
+        "name": "load_power",
+        "type": "float",
+        "defaultValue": "0",
+        "persistent": false
+      },
+      {
+        "objID": "dac7ac44-90c1-47dc-9fee-26907ba6ae71",
+        "name": "load_on",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Load On\",\n  value: 4.8,\n  unit: \"V\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 999\n}",
+        "persistent": false
+      },
+      {
+        "objID": "5e99598e-e252-48c0-b466-c6edd7a53fa6",
+        "name": "load_off",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Load Off\",\n  value: 2.5,\n  unit: \"V\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 999\n}",
+        "persistent": false
+      },
+      {
+        "objID": "6455fd28-1aab-4ffb-a97d-102a9f4a221e",
+        "name": "log_frequency",
+        "type": "struct:NumberInput",
+        "defaultValue": "{\n  label: \"Log Rate\",\n  value: 500,\n  unit: \"ms\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 999\n}",
+        "persistent": false
+      },
+      {
+        "objID": "8a81130f-dc55-4e24-db03-9c0a2c4d12ae",
+        "name": "PROFILE_NAMES",
+        "type": "array:string",
+        "defaultValue": "[\"Profile 1\", \"Profile 2\"]",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "fb4554ee-7ad8-4980-8995-fcf8316198c6",
+        "name": "PROFILE_VALUES",
+        "type": "array:struct:Profile",
+        "defaultValue": "[\n {\n   volt_start: 4.35,\n   volt_end: 2,\n   volt_step: 0.01,\n   step_delay: 5\n },\n {\n   volt_start: 1.1,\n   volt_end: 2.1,\n   volt_step: 0.01,\n   step_delay: 5\n },\n]",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "c3dfbd47-f43c-4e86-c564-8c78bde4168e",
+        "name": "selected_profile",
+        "type": "integer",
+        "defaultValue": "0",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "51009bcb-77c0-476e-8bb4-516c1df0c2ba",
+        "name": "scope_pp",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "8b783c3f-cfe6-4480-98b5-f27ea1c7ad64",
+        "name": "scope_rms",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "af724d9a-1801-4e2e-a0b4-23a97b9ffba9",
+        "name": "dmm_dcv",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "819f56f6-518e-4ac9-ba51-f95df5e7ca32",
+        "name": "dmm_acv",
+        "type": "boolean",
+        "defaultValue": "false",
+        "persistent": false,
+        "native": false
+      }
+    ],
+    "structures": [
+      {
+        "objID": "422c822f-4612-42e4-905b-5eafa322b432",
+        "name": "NumberInput",
+        "fields": [
+          {
+            "objID": "f988a96f-a0db-4996-e991-b26bb723cff7",
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "objID": "64c2002d-02b1-4e13-f0f9-308ee8d82b56",
+            "name": "value",
+            "type": "float"
+          },
+          {
+            "objID": "5820f0d0-b3a8-447e-a3f0-1c5455bdaf54",
+            "name": "unit",
+            "type": "string"
+          },
+          {
+            "objID": "68f65495-2c23-43ae-f8f9-732671c76cea",
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "objID": "56792edc-0d26-45e5-8bf5-4805a2177fd4",
+            "name": "error",
+            "type": "string"
+          },
+          {
+            "objID": "a3a08e7b-e5b1-4b60-d157-e26cd6616deb",
+            "name": "MIN",
+            "type": "float"
+          },
+          {
+            "objID": "9cfee879-46e1-4c46-a992-74e55d5e2c0f",
+            "name": "MAX",
+            "type": "float"
+          }
+        ]
+      },
+      {
+        "objID": "c8686ee4-c776-44d1-aff7-98fd30ab1103",
+        "name": "Profile",
+        "fields": [
+          {
+            "objID": "989ab383-c4fc-4a9a-c782-9136cd6f0201",
+            "name": "volt_start",
+            "type": "float"
+          },
+          {
+            "objID": "0244217e-a17f-437e-975a-c1802bdee04b",
+            "name": "volt_end",
+            "type": "float"
+          },
+          {
+            "objID": "b44bca4b-e67a-4a14-a778-2c0d00354594",
+            "name": "volt_step",
+            "type": "float"
+          },
+          {
+            "objID": "59a5db94-5f4a-45e4-c4d9-540c86f72a75",
+            "name": "step_delay",
+            "type": "float"
+          },
+          {
+            "objID": "b6f9fab3-2b39-4e20-96e1-96688cee9a92",
+            "name": "current_max",
+            "type": "float"
+          }
+        ]
+      }
+    ],
+    "enums": []
+  },
+  "actions": [],
+  "userPages": [
+    {
+      "objID": "f7f15531-2f0d-6247-72af-17ad3967f8e0",
+      "components": [
+        {
+          "objID": "ec090d3c-466b-41cc-fc05-47ba4afa79a8",
+          "type": "ButtonDashboardWidget",
+          "left": 53,
+          "top": 47,
+          "width": 216,
+          "height": 40,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Constant Load Voltage Sweep\"",
+          "style": {
+            "objID": "cd02a1ea-a8a6-43b7-d3a3-45860b2702f7",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "a4578f46-2d21-48b0-9982-967f35ac9366",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "disabledStyle": {
+            "objID": "4a191a42-e8aa-4af6-ff61-22311ff5e161",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "63bfbdad-d951-4bcf-95b9-57c199eb09ea",
+          "type": "ShowPageActionComponent",
+          "left": 146,
+          "top": -108,
+          "width": 133,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "page": "Constant Load Setup"
+        }
+      ],
+      "connectionLines": [
+        {
+          "objID": "b1805c6a-80a6-4fbf-ed22-a2843c96a763",
+          "source": "ec090d3c-466b-41cc-fc05-47ba4afa79a8",
+          "output": "CLICKED",
+          "target": "63bfbdad-d951-4bcf-95b9-57c199eb09ea",
+          "input": "@seqin"
+        }
+      ],
+      "localVariables": [
+        {
+          "objID": "5677554d-a2f5-4a84-db00-b20fb3caa359",
+          "name": "id",
+          "type": "string",
+          "defaultValue": "\"\"",
+          "persistent": false
+        },
+        {
+          "objID": "9713fbe0-e0c6-4b79-b83c-5fcf370b162e",
+          "name": "name",
+          "type": "string",
+          "defaultValue": "\"\"",
+          "persistent": false
+        }
+      ],
+      "name": "Main",
+      "style": "page",
+      "left": 0,
+      "top": 0,
+      "width": 800,
+      "height": 480,
+      "lvglLocalStyles": {
+        "objID": "e85dbd5d-8325-1629-003b-86fd654ae635"
+      }
+    },
+    {
+      "objID": "dd14e387-1da4-484b-9de7-582e2b55373c",
+      "components": [
+        {
+          "objID": "0b53fa80-50e4-4152-bfcd-f4be12f3b9bc",
+          "type": "ShowPageActionComponent",
+          "left": 68,
+          "top": 651,
+          "width": 94,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "page": "Main"
+        },
+        {
+          "objID": "9d0a65b8-696b-47a4-d5e6-dae183e7d16d",
+          "type": "ContainerWidget",
+          "left": 10,
+          "top": 8,
+          "width": 780,
+          "height": 198,
+          "customInputs": [],
+          "customOutputs": [],
+          "style": {
+            "objID": "95b98828-7122-46a1-f96f-0d2e266a0e6d",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#b8d3d3",
+            "borderRadius": "10"
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [],
+          "name": "Power Supply",
+          "widgets": [
+            {
+              "objID": "3f59acf6-f6c4-4b03-d929-88bf78dab443",
+              "type": "TextDashboardWidget",
+              "left": 12,
+              "top": 0,
+              "width": 84,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Power Supply\"",
+              "style": {
+                "objID": "3eb77fa7-1ccf-4dac-9360-b41e818329c1",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "fontWeight": "bold"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "3087b6cf-f095-4fa3-e970-895b4574ae9a",
+              "type": "TextDashboardWidget",
+              "left": 130,
+              "top": 6,
+              "width": 83,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Test Channel\"",
+              "style": {
+                "objID": "2496afea-eeee-43bf-c2b5-2d91c919d7d8",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "fontWeight": "normal"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "be8f273d-94a8-4a0b-de61-a666a0a5c378",
+              "type": "DropDownListDashboardWidget",
+              "left": 213,
+              "top": 6,
+              "width": 51,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "psu_test_channel",
+              "style": {
+                "objID": "7d579d98-5081-4fe9-b8ed-36fac49f2df0",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "options": "[\"1\", \"2\", \"3\"]"
+            },
+            {
+              "objID": "21783b3b-2ba0-4051-986c-3e6b6cd58991",
+              "type": "UserWidgetWidget",
+              "left": 541,
+              "top": 6,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "5c810a3c-d6d3-4509-95f6-79ecfc5f368b",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "b2d41d52-9e8e-4a62-e45e-93fb75b6eed8",
+              "type": "DropDownListDashboardWidget",
+              "left": 715,
+              "top": 6,
+              "width": 51,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "psu_aux_channel",
+              "style": {
+                "objID": "a624a45f-de70-4020-930d-1f6e9f822fe9",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "options": "[\"1\", \"2\", \"3\"]"
+            },
+            {
+              "objID": "d73d2f18-bd21-4863-bcc2-6fc31e13c461",
+              "type": "UserWidgetWidget",
+              "left": 12,
+              "top": 70,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "1a85440a-d4af-4676-eea1-07ec48f8cb52",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "74b33a9a-c5df-41e1-dd77-de94afb81bab",
+              "type": "UserWidgetWidget",
+              "left": 244,
+              "top": 70,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "74c14263-879b-49a9-db48-ecb51c501581",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "ac3347cd-8643-4df5-b525-1506dff06209",
+              "type": "UserWidgetWidget",
+              "left": 530,
+              "top": 71,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "cb52727c-d5d2-43c9-c86e-095df8e8d3a9",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "b09e6dda-15db-4027-e523-5cb36e808c44",
+              "type": "UserWidgetWidget",
+              "left": 12,
+              "top": 134,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "19c0e8ed-56af-4718-bfaa-9e3c0d39181d",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "8c0dc81e-fcb0-41a1-f1c3-b3e9a9ebc674",
+              "type": "UserWidgetWidget",
+              "left": 244,
+              "top": 134,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "adce0dd3-4da2-4a1b-ab06-77651445ec13",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "d36e0076-1f92-44ef-f275-d92dc9e85283",
+              "type": "TextDashboardWidget",
+              "left": 423,
+              "top": 135,
+              "width": 118,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Test Duration: \" + ((volt_start.value - volt_end.value)/volt_step.value)*step_delay.value + \" s\"\n",
+              "style": {
+                "objID": "128ff80d-dd54-492b-d0b3-a2bdba688e45",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "9d564894-f6de-45c5-b1d9-f25e847cb69b",
+              "type": "CheckboxWidget",
+              "left": 304,
+              "top": 3,
+              "width": 115,
+              "height": 20,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "psu_serial",
+              "style": {
+                "objID": "f1718344-4f53-4fc5-be75-afbde0f983b3",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "label": "\"Serial\""
+            },
+            {
+              "objID": "794f2b34-8d2d-4821-b694-4d6ff69aa1d7",
+              "type": "CheckboxWidget",
+              "left": 304,
+              "top": 22,
+              "width": 115,
+              "height": 20,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "psu_parallel",
+              "style": {
+                "objID": "d40558ac-c43c-4235-be6f-7d7fcacc4b6c",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "label": "\"Parallel\""
+            }
+          ],
+          "layout": "static"
+        },
+        {
+          "objID": "a6fe7944-3220-44a7-f09a-e4f85ce4c460",
+          "type": "Container",
+          "left": 10,
+          "top": 215,
+          "width": 780,
+          "height": 102,
+          "customInputs": [],
+          "customOutputs": [],
+          "style": {
+            "objID": "fa1921a0-2582-4647-b51f-4bc384e0200b",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#b8d3d3",
+            "borderRadius": "10"
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [],
+          "name": "Electronic Load",
+          "widgets": [
+            {
+              "objID": "f1227847-004d-4a62-e363-b9857f3dcb1d",
+              "type": "TextDashboardWidget",
+              "left": 12,
+              "top": 0,
+              "width": 101,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Electronic Load\"",
+              "style": {
+                "objID": "7e102347-6eeb-4a6d-8485-78cedf5b1266",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "fontWeight": "bold"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "0b9ec715-ce62-46a9-dec8-4a28c1c83307",
+              "type": "TextDashboardWidget",
+              "left": 12,
+              "top": 34,
+              "width": 76,
+              "height": 40,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Load Mode:\"",
+              "style": {
+                "objID": "bff6429e-9e9d-4cbf-f809-9c2f4ea97834",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "alignHorizontal": "left"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "6accfa92-8785-41bf-c5bb-fbbc80930929",
+              "type": "DropDownListDashboardWidget",
+              "left": 88,
+              "top": 38,
+              "width": 42,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "load_mode",
+              "style": {
+                "objID": "9cac6849-366e-4252-897e-13048430bbea",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "options": "[\"CC\", \"CR\", \"CV\", \"CP\"]"
+            },
+            {
+              "objID": "086df738-0e85-4599-8d1f-5460b23675a6",
+              "type": "SelectWidget",
+              "left": 142,
+              "top": 38,
+              "width": 88,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "load_mode",
+              "style": {
+                "objID": "5638b450-a1b1-415e-83d2-dd1aac113fb7",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "widgets": [
+                {
+                  "objID": "89acf9ef-7693-4c87-c9d4-2faef68d5a16",
+                  "type": "ContainerWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 88,
+                  "height": 32,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "42ff35eb-8394-4f46-b678-7e09f44ee96e",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "widgets": [
+                    {
+                      "objID": "57c04c57-d581-48a8-dae6-7cf1781707af",
+                      "type": "TextInputWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 48,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "load_current",
+                      "style": {
+                        "objID": "29b8512b-8348-42ed-84c7-7943ba83b097",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    },
+                    {
+                      "objID": "ec6a76d1-7cd5-4178-f727-b6fef807b712",
+                      "type": "TextDashboardWidget",
+                      "left": 48,
+                      "top": 0,
+                      "width": 23,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "\"A\"",
+                      "style": {
+                        "objID": "654c6a98-f658-4f1f-b0d6-32e84fb73b7f",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": [],
+                        "alignHorizontal": "center"
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    }
+                  ],
+                  "layout": "static"
+                },
+                {
+                  "objID": "0f5a0e66-874c-4917-fde2-9964dbe4e360",
+                  "type": "ContainerWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 88,
+                  "height": 32,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "1e6d6308-0052-4c81-db96-8a0c4376d3cd",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "widgets": [
+                    {
+                      "objID": "52e8297e-9ba0-49c2-ce0b-620151e15168",
+                      "type": "TextInputWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 48,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "load_resistance",
+                      "style": {
+                        "objID": "4fc49a1f-659b-45b5-b1c5-8f85328a93b1",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    },
+                    {
+                      "objID": "8c18ad25-c4a7-48e9-b095-ffaafc3c1f3d",
+                      "type": "TextDashboardWidget",
+                      "left": 48,
+                      "top": 0,
+                      "width": 23,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "\"Ω\"",
+                      "style": {
+                        "objID": "e8f5d793-1d04-4afd-fd69-046feafc3b9c",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": [],
+                        "alignHorizontal": "center"
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    }
+                  ],
+                  "layout": "static"
+                },
+                {
+                  "objID": "04ab1b2a-f8fe-46be-d2c3-f448c748379e",
+                  "type": "ContainerWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 88,
+                  "height": 32,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "6fa36a3a-1776-4ed5-9d53-b8b58edd3e3c",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "widgets": [
+                    {
+                      "objID": "53953edc-8534-4b8b-b9d3-c2223a72a66c",
+                      "type": "TextInputWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 48,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "load_voltage",
+                      "style": {
+                        "objID": "a6ad44e7-8418-4e30-f0b4-69b9cdd49be2",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    },
+                    {
+                      "objID": "b349811a-1666-4d7b-bf4d-0ab9f5ed7c4a",
+                      "type": "TextDashboardWidget",
+                      "left": 48,
+                      "top": 0,
+                      "width": 23,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "\"V\"",
+                      "style": {
+                        "objID": "d8ed226d-5e7f-4cc5-d630-d7959d61ac81",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": [],
+                        "alignHorizontal": "center"
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    }
+                  ],
+                  "layout": "static"
+                },
+                {
+                  "objID": "80f02bd1-f535-475b-fc04-b93ac2f3f4ff",
+                  "type": "ContainerWidget",
+                  "left": 0,
+                  "top": 0,
+                  "width": 88,
+                  "height": 32,
+                  "customInputs": [],
+                  "customOutputs": [],
+                  "style": {
+                    "objID": "0b006811-7f32-4311-aaac-57d0ae013672",
+                    "useStyle": "default",
+                    "conditionalStyles": [],
+                    "childStyles": []
+                  },
+                  "timeline": [],
+                  "eventHandlers": [],
+                  "widgets": [
+                    {
+                      "objID": "3592526d-29ef-40c5-db9b-2b4fc679ec85",
+                      "type": "TextInputWidget",
+                      "left": 0,
+                      "top": 0,
+                      "width": 48,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "load_power",
+                      "style": {
+                        "objID": "0e9be247-dd41-4884-e1e2-95de1d75d79c",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": []
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    },
+                    {
+                      "objID": "fad56fbe-6b2a-4097-fdf9-3255576b1d83",
+                      "type": "TextDashboardWidget",
+                      "left": 48,
+                      "top": 0,
+                      "width": 23,
+                      "height": 32,
+                      "customInputs": [],
+                      "customOutputs": [],
+                      "data": "\"W\"",
+                      "style": {
+                        "objID": "aa8563fd-413b-4e54-dfe0-a7f3c8bbb9cb",
+                        "useStyle": "default",
+                        "conditionalStyles": [],
+                        "childStyles": [],
+                        "alignHorizontal": "center"
+                      },
+                      "timeline": [],
+                      "eventHandlers": []
+                    }
+                  ],
+                  "layout": "static"
+                }
+              ]
+            },
+            {
+              "objID": "506ec309-4581-4155-fcf4-665b1162fc5c",
+              "type": "UserWidgetWidget",
+              "left": 244,
+              "top": 37,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "fd8d457a-5aea-4932-d3c6-84ef38c36aad",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "df8374b5-f4ca-4bb3-e4e5-7974dc77c561",
+              "type": "UserWidgetWidget",
+              "left": 496,
+              "top": 38,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "ac7ad381-3a33-43f3-e019-73eb26f63174",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            }
+          ],
+          "layout": "static"
+        },
+        {
+          "objID": "11347480-5132-4184-b10d-2b62ff00a072",
+          "type": "Container",
+          "left": 10,
+          "top": 328,
+          "width": 780,
+          "height": 120,
+          "customInputs": [],
+          "customOutputs": [],
+          "style": {
+            "objID": "79ced0e2-7935-4ed0-8655-c041477a6598",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#b8d3d3",
+            "borderRadius": "10"
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [],
+          "name": "Measurement",
+          "widgets": [
+            {
+              "objID": "1b9ef4ed-00a4-4d3f-c460-6007f5c4091e",
+              "type": "TextDashboardWidget",
+              "left": 12,
+              "top": 0,
+              "width": 101,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Measurement\"",
+              "style": {
+                "objID": "bef21a02-5b33-4a57-8773-511c086600f7",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "fontWeight": "bold"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "4a36fb4f-88cf-42c1-b8d2-5042fc284292",
+              "type": "UserWidgetWidget",
+              "left": 12,
+              "top": 35,
+              "width": 170,
+              "height": 64,
+              "customInputs": [],
+              "customOutputs": [],
+              "style": {
+                "objID": "d18510fe-d5a0-4541-f3b4-f079f825f962",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "userWidgetPageName": "NumberInput"
+            },
+            {
+              "objID": "1ecc272f-2d7d-4b7e-a1f8-5c64e43a3fd4",
+              "type": "TextDashboardWidget",
+              "left": 273,
+              "top": 0,
+              "width": 101,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Oscilloscope\"",
+              "style": {
+                "objID": "7dc204a4-2dc9-487f-a61f-a87dae62f17d",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "fontWeight": "bold"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "9215fbaa-cbf8-4cee-88be-fe9a2eb4af58",
+              "type": "CheckboxWidget",
+              "left": 272,
+              "top": 33,
+              "width": 115,
+              "height": 20,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "scope_pp",
+              "style": {
+                "objID": "fe4e9ea5-007b-4e6c-9210-6f8ebf550b84",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "label": "\"Log p-p ripple\""
+            },
+            {
+              "objID": "4c7d7ad3-c2e3-48f4-87cd-7d875aaf3507",
+              "type": "CheckboxWidget",
+              "left": 272,
+              "top": 52,
+              "width": 115,
+              "height": 20,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "scope_rms",
+              "style": {
+                "objID": "9c1150d2-2b7e-4e00-f907-5b2dd6975cc8",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "label": "\"Log RMS ripple\""
+            },
+            {
+              "objID": "0d30ce52-cade-43c3-8729-c4b9f915e38a",
+              "type": "TextDashboardWidget",
+              "left": 542,
+              "top": 0,
+              "width": 101,
+              "height": 32,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "\"Multimeter\"",
+              "style": {
+                "objID": "9b975921-394c-4582-b34f-e6738d6aacaf",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": [],
+                "fontWeight": "bold"
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": []
+            },
+            {
+              "objID": "7f13409d-04f4-4dd9-9866-f177f3a40dd3",
+              "type": "CheckboxWidget",
+              "left": 541,
+              "top": 33,
+              "width": 115,
+              "height": 20,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "dmm_dcv",
+              "style": {
+                "objID": "179619d6-4358-49a1-b7f0-42f169b20fc3",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "label": "\"Log DCV\""
+            },
+            {
+              "objID": "445c9885-a753-412a-effa-f2c34fcc4932",
+              "type": "CheckboxWidget",
+              "left": 541,
+              "top": 52,
+              "width": 115,
+              "height": 20,
+              "customInputs": [],
+              "customOutputs": [],
+              "data": "dmm_acv",
+              "style": {
+                "objID": "2cefcd3e-8ab7-4a95-f28f-9ec5046d6840",
+                "useStyle": "default",
+                "conditionalStyles": [],
+                "childStyles": []
+              },
+              "hiddenInEditor": false,
+              "timeline": [],
+              "eventHandlers": [],
+              "label": "\"Log ACV\""
+            }
+          ],
+          "layout": "static"
+        },
+        {
+          "objID": "9c75a6af-4ff9-4b96-fe2f-3deef61c71ff",
+          "type": "ButtonDashboardWidget",
+          "left": 6,
+          "top": 531,
+          "width": 80,
+          "height": 60,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"BACK\"",
+          "style": {
+            "objID": "5f81c84d-3f79-4b76-bc4a-3c4ba8643270",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "1c9d8906-5ac5-437f-df3b-bd389c2ef621",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "disabledStyle": {
+            "objID": "9dbca9b8-8e56-44c3-ae07-ce6ea689f294",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "1d45bcc3-1128-41f5-bebe-af75f14a4710",
+          "type": "ShowPageActionComponent",
+          "left": 1083,
+          "top": -36,
+          "width": 170,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "page": "Constant Load Measurement"
+        },
+        {
+          "objID": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "type": "ButtonDashboardWidget",
+          "left": 710,
+          "top": 530,
+          "width": 80,
+          "height": 60,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"APPLY & NEXT\"",
+          "style": {
+            "objID": "fc5783a9-8f58-4524-fb32-080bb3075175",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#007ccb"
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "096b9ee8-6840-4161-bcdb-a1ef9c78a651",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "disabledStyle": {
+            "objID": "5ceb4df2-02e0-40d4-9045-723b5a9235d2",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "1dc899a3-f28e-40ca-d001-1d0e6211c367",
+          "type": "EvalExprActionComponent",
+          "left": -145,
+          "top": 8,
+          "width": 120,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "volt_start"
+        },
+        {
+          "objID": "ba7b087c-76b2-4b07-f9f9-143e09b8101e",
+          "type": "EvalExprActionComponent",
+          "left": 62,
+          "top": -81,
+          "width": 108,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "volt_end"
+        },
+        {
+          "objID": "19aa9aa3-ec13-4ef1-9a2a-29ae9fddc08f",
+          "type": "EvalExprActionComponent",
+          "left": 370,
+          "top": -81,
+          "width": 126,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "current_max"
+        },
+        {
+          "objID": "ea8ef0eb-e7a6-4098-81bd-64d362236a9f",
+          "type": "EvalExprActionComponent",
+          "left": -139,
+          "top": 68,
+          "width": 114,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "volt_step"
+        },
+        {
+          "objID": "ff1e385f-331f-4444-a8d7-685752ee5b09",
+          "type": "EvalExprActionComponent",
+          "left": -145,
+          "top": 133,
+          "width": 120,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "step_delay"
+        },
+        {
+          "objID": "13a26ff0-d868-4b02-825b-7b2c5638fb0e",
+          "type": "SwitchActionComponent",
+          "left": 1090,
+          "top": 376,
+          "width": 188,
+          "height": 111,
+          "customInputs": [],
+          "customOutputs": [],
+          "tests": [
+            {
+              "objID": "6902bc48-0b26-46b2-9f2c-e90cf9216eeb",
+              "condition": "load_mode == 0",
+              "outputName": "current",
+              "outputValue": ""
+            },
+            {
+              "objID": "68968d18-dc93-40b6-f736-cae61e92505a",
+              "condition": "load_mode == 1",
+              "outputName": "resistance",
+              "outputValue": ""
+            },
+            {
+              "objID": "83ad1e6b-eb6a-49ae-c7cd-01d31586702b",
+              "condition": "load_mode == 2",
+              "outputName": "voltage"
+            },
+            {
+              "objID": "2750ca77-0866-4c2a-8797-66f5fad20308",
+              "condition": "load_mode == 3",
+              "outputName": "power"
+            }
+          ]
+        },
+        {
+          "objID": "9693d991-fa90-44ad-ed20-4ce4631a9ec0",
+          "type": "EvalExprActionComponent",
+          "left": -133,
+          "top": 264,
+          "width": 108,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "load_off"
+        },
+        {
+          "objID": "0654e195-6cd8-4475-f25e-1be87dc731fd",
+          "type": "EvalExprActionComponent",
+          "left": -130,
+          "top": 204,
+          "width": 102,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "load_on"
+        },
+        {
+          "objID": "6a367b7c-4471-400f-c0a3-6f87586a2e63",
+          "type": "EvalExprActionComponent",
+          "left": 388,
+          "top": -145,
+          "width": 108,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "volt_aux"
+        },
+        {
+          "objID": "8da08201-b960-412f-d955-6cf14823c28a",
+          "type": "EvalExprActionComponent",
+          "left": -164,
+          "top": 359,
+          "width": 139,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "log_frequency"
+        },
+        {
+          "objID": "5ad119d7-4c5c-45bf-e32a-988d52d7128c",
+          "type": "SCPIActionComponent",
+          "left": 1332,
+          "top": 349,
+          "width": 151,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "CC:HIGH {load_current}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "f4ae05bf-0239-4ede-b1d5-02450ba46f27",
+          "type": "SCPIActionComponent",
+          "left": 1332,
+          "top": 402,
+          "width": 170,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "CR:HIGH {load_resistance}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "ede72242-3347-41a8-fb08-bc317e119d94",
+          "type": "SCPIActionComponent",
+          "left": 1332,
+          "top": 455,
+          "width": 151,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "CV:HIGH {load_voltage}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "f73ce0cb-dbc2-4b13-cb59-395dd2add825",
+          "type": "SCPIActionComponent",
+          "left": 1332,
+          "top": 508,
+          "width": 139,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "CP:HIGH {load_power}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "244b58b5-958c-405b-d8b0-bffbaadce537",
+          "type": "SCPIActionComponent",
+          "left": 1083,
+          "top": 96,
+          "width": 280,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "VSET{psu_test_channel+1} {volt_start.value}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "67ea5e40-e089-4119-eb5d-6fc10e1fbd4d",
+          "type": "SCPIActionComponent",
+          "left": 1083,
+          "top": 202,
+          "width": 262,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "VSET{psu_aux_channel+1} {volt_aux.value}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "311fe140-9409-4361-c9d0-240b83ce51da",
+          "type": "SCPIActionComponent",
+          "left": 1083,
+          "top": 149,
+          "width": 286,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "ISET{psu_test_channel+1} {current_max.value}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "89a3ed6c-9f7f-4e64-9430-8e7d7c64a707",
+          "type": "SCPIActionComponent",
+          "left": 1090,
+          "top": 576,
+          "width": 139,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LDON {load_on.value}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "27d4a885-1f33-4d4c-9100-ab41f3d3cd85",
+          "type": "SCPIActionComponent",
+          "left": 1090,
+          "top": 629,
+          "width": 145,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LDOF {load_off.value}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "e85fd7e5-ef48-4295-c1e0-04544cf9100d",
+          "type": "ShowPageActionComponent",
+          "left": 828,
+          "top": 636,
+          "width": 170,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "page": "Constant Load Measurement"
+        },
+        {
+          "objID": "5f8e7b58-319d-4ed3-e5a0-aa88016f3954",
+          "type": "SetVariableActionComponent",
+          "left": 1395,
+          "top": 96,
+          "width": 245,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "fdad2374-03a1-4add-88d4-80978b9a1c05",
+              "variable": "volt_variable",
+              "value": "volt_start.value"
+            }
+          ]
+        },
+        {
+          "objID": "97839ab9-789c-411e-8e99-69a105d52bb6",
+          "type": "SCPIActionComponent",
+          "left": 1082,
+          "top": 43,
+          "width": 89,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "OUT:ALL 0",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "84258aa1-9d4c-44c0-c420-742fcbb77d17",
+          "type": "SCPIActionComponent",
+          "left": 1090,
+          "top": 289,
+          "width": 97,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LOAD OFF",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "0c428c5b-f0f7-4da1-b6ef-67940d7a7cd7",
+          "type": "TextDashboardWidget",
+          "left": 14,
+          "top": 451,
+          "width": 64,
+          "height": 32,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Profiles\"",
+          "style": {
+            "objID": "a1d10efd-7f9d-45ef-d796-dda5bd776e6b",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "4e588b7b-230c-4cda-ce58-229af2de816d",
+          "type": "DropDownListDashboardWidget",
+          "left": 78,
+          "top": 451,
+          "width": 90,
+          "height": 32,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "selected_profile",
+          "style": {
+            "objID": "125c05ab-b8ca-4118-e7be-df8d4cfe134b",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [],
+          "options": "PROFILE_NAMES"
+        },
+        {
+          "objID": "d442998a-a966-4a83-db8b-ac0607b96305",
+          "type": "TextDashboardWidget",
+          "left": 178,
+          "top": 475,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Start V = \" + volt_start.value + \" V\"",
+          "style": {
+            "objID": "dbf48dca-3812-4d66-ea10-2c09775e7b99",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "13f6241f-e82f-488c-8569-73c7f809c5a5",
+          "type": "TextDashboardWidget",
+          "left": 178,
+          "top": 499,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"End V = \" + volt_end.value + \" V\"",
+          "style": {
+            "objID": "b6653476-e59e-4618-d4f0-406e1db7525e",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "5ac36e5f-49b6-47c0-f8bc-830f0c2d66dd",
+          "type": "WatchVariableActionComponent",
+          "left": 92,
+          "top": 727,
+          "width": 172,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "selected_profile"
+        },
+        {
+          "objID": "3a39d742-e38a-4e84-9172-95fba6e7a24d",
+          "type": "SetVariableActionComponent",
+          "left": 345,
+          "top": 706,
+          "width": 429,
+          "height": 75,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "cd86c040-62b8-46d2-e53f-ef90d06bf67d",
+              "variable": "volt_start.value",
+              "value": "PROFILE_VALUES[selected_profile].volt_start"
+            },
+            {
+              "objID": "afa6fbd4-8118-413f-9e2b-bb20a9a3d1e7",
+              "variable": "volt_end.value",
+              "value": "PROFILE_VALUES[selected_profile].volt_end"
+            }
+          ]
+        },
+        {
+          "objID": "4f5985e6-ed59-499a-db18-600849b2b8cf",
+          "type": "TextDashboardWidget",
+          "left": 178,
+          "top": 524,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"V step = \" + volt_step.value + \" V\"",
+          "style": {
+            "objID": "3df437f4-064b-4fc6-cb0d-f94d325a8881",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "f19cf3fb-c050-4f2d-da67-e9faaacdde71",
+          "type": "TextDashboardWidget",
+          "left": 178,
+          "top": 549,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Step Delay = \" + step_delay.value + \" s\"",
+          "style": {
+            "objID": "11605f08-5980-41ec-b196-4338bb0527de",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "e8618d1e-4057-4389-ee0d-d2b4bbffedb4",
+          "type": "TextDashboardWidget",
+          "left": 178,
+          "top": 451,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Test Ch: \" + psu_test_channel+1",
+          "style": {
+            "objID": "60397ab2-9ae4-486a-e508-92a1c68f69cf",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "73d88241-c0ba-4c1c-fcff-d53af7b972ee",
+          "type": "TextDashboardWidget",
+          "left": 300,
+          "top": 451,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Serial: \" + psu_serial + \" / Parallel: \" + psu_parallel",
+          "style": {
+            "objID": "6fd20b89-9576-45ec-9e4e-ff765d437f2d",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "4a72a761-dca5-475a-e067-f3c5509f49ac",
+          "type": "TextDashboardWidget",
+          "left": 178,
+          "top": 573,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Max Current = \" + current_max.value + \" A\"",
+          "style": {
+            "objID": "09ef3f81-7aa6-47c4-88e3-8fb40f14d6b6",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "d274d547-6907-4963-affd-ff9e224fca8f",
+          "type": "TextDashboardWidget",
+          "left": 300,
+          "top": 500,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Aux Ch: \" + psu_aux_channel+1",
+          "style": {
+            "objID": "cd5fcbfa-b571-45bf-fcb0-710a924032d6",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "2a4e0374-1b11-4241-96d6-a1324477d297",
+          "type": "TextDashboardWidget",
+          "left": 300,
+          "top": 524,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Aux V = \" + volt_aux.value + \" V\"",
+          "style": {
+            "objID": "4ea920fc-7bdb-4987-f8d7-44cf20b6d09c",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "c360b66f-c603-4969-9d58-7546d5da6c12",
+          "type": "TextDashboardWidget",
+          "left": 450,
+          "top": 451,
+          "width": 112,
+          "height": 25,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"Load Mode: \" + load_mode",
+          "style": {
+            "objID": "85c4f2fa-24e4-4ab7-8329-c63d69bbce99",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": []
+        }
+      ],
+      "connectionLines": [
+        {
+          "objID": "be68bf9b-46ad-47fd-b2b9-d944e4ab21f2",
+          "source": "9c75a6af-4ff9-4b96-fe2f-3deef61c71ff",
+          "output": "CLICKED",
+          "target": "0b53fa80-50e4-4152-bfcd-f4be12f3b9bc",
+          "input": "@seqin"
+        },
+        {
+          "objID": "61574b38-8ac4-4ab1-b51b-77645ec48adb",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "1d45bcc3-1128-41f5-bebe-af75f14a4710",
+          "input": "@seqin"
+        },
+        {
+          "objID": "651f1462-a762-4f18-bdac-64644d64ba66",
+          "source": "1dc899a3-f28e-40ca-d001-1d0e6211c367",
+          "output": "result",
+          "target": "d73d2f18-bd21-4863-bcc2-6fc31e13c461",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "8327ed39-25eb-4a32-901a-515d1be0a770",
+          "source": "ba7b087c-76b2-4b07-f9f9-143e09b8101e",
+          "output": "result",
+          "target": "74b33a9a-c5df-41e1-dd77-de94afb81bab",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "22fbb8ef-6954-4018-f26b-cf636f5be6b9",
+          "source": "19aa9aa3-ec13-4ef1-9a2a-29ae9fddc08f",
+          "output": "result",
+          "target": "ac3347cd-8643-4df5-b525-1506dff06209",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "ca5f89ec-fb55-4af3-aed8-9147bd56901d",
+          "source": "ea8ef0eb-e7a6-4098-81bd-64d362236a9f",
+          "output": "result",
+          "target": "b09e6dda-15db-4027-e523-5cb36e808c44",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "c405f7d9-b09c-4862-a352-22965d73ce37",
+          "source": "ff1e385f-331f-4444-a8d7-685752ee5b09",
+          "output": "result",
+          "target": "8c0dc81e-fcb0-41a1-f1c3-b3e9a9ebc674",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "7b436e84-35be-4a6b-d729-e07be2a15d8e",
+          "source": "0654e195-6cd8-4475-f25e-1be87dc731fd",
+          "output": "result",
+          "target": "506ec309-4581-4155-fcf4-665b1162fc5c",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "e4a39e2d-b26c-4e68-d10f-643c54f88563",
+          "source": "9693d991-fa90-44ad-ed20-4ce4631a9ec0",
+          "output": "result",
+          "target": "df8374b5-f4ca-4bb3-e4e5-7974dc77c561",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "5498498e-b0bf-4d01-e31b-c9ad026ef17b",
+          "source": "6a367b7c-4471-400f-c0a3-6f87586a2e63",
+          "output": "result",
+          "target": "21783b3b-2ba0-4051-986c-3e6b6cd58991",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "63792cdb-f59a-4527-ed55-71ac784be8c9",
+          "source": "8da08201-b960-412f-d955-6cf14823c28a",
+          "output": "result",
+          "target": "4a36fb4f-88cf-42c1-b8d2-5042fc284292",
+          "input": "37aed484-6bc7-42d2-8de0-51f9c3e87809"
+        },
+        {
+          "objID": "adce9f01-c105-41d9-d86e-d308a930e271",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "13a26ff0-d868-4b02-825b-7b2c5638fb0e",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ab32c242-994e-4fb5-82a8-65604db457ae",
+          "source": "13a26ff0-d868-4b02-825b-7b2c5638fb0e",
+          "output": "current",
+          "target": "5ad119d7-4c5c-45bf-e32a-988d52d7128c",
+          "input": "@seqin"
+        },
+        {
+          "objID": "5affd73b-30ea-49c5-8188-2c3ac6d47272",
+          "source": "13a26ff0-d868-4b02-825b-7b2c5638fb0e",
+          "output": "resistance",
+          "target": "f4ae05bf-0239-4ede-b1d5-02450ba46f27",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f154e137-66d6-45b5-de97-a70e8d9699ed",
+          "source": "13a26ff0-d868-4b02-825b-7b2c5638fb0e",
+          "output": "voltage",
+          "target": "ede72242-3347-41a8-fb08-bc317e119d94",
+          "input": "@seqin"
+        },
+        {
+          "objID": "7c04d7d1-d8bd-4efa-ce94-8b14c59a08e0",
+          "source": "13a26ff0-d868-4b02-825b-7b2c5638fb0e",
+          "output": "power",
+          "target": "f73ce0cb-dbc2-4b13-cb59-395dd2add825",
+          "input": "@seqin"
+        },
+        {
+          "objID": "d1da85bc-e272-4c80-b157-ea14a75c64b3",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "244b58b5-958c-405b-d8b0-bffbaadce537",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c97dfb60-a268-4e0b-fb01-8ab99eaab961",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "311fe140-9409-4361-c9d0-240b83ce51da",
+          "input": "@seqin"
+        },
+        {
+          "objID": "35ac68f6-8757-460f-ba95-dc9e75401372",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "67ea5e40-e089-4119-eb5d-6fc10e1fbd4d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "5dbbde2f-abc0-402b-fe28-c2b4d719ac0b",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "89a3ed6c-9f7f-4e64-9430-8e7d7c64a707",
+          "input": "@seqin"
+        },
+        {
+          "objID": "04444284-b048-4558-e164-41a981d58c4d",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "27d4a885-1f33-4d4c-9100-ab41f3d3cd85",
+          "input": "@seqin"
+        },
+        {
+          "objID": "a14f032d-7480-4fd9-9645-f3a25d96f27e",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "e85fd7e5-ef48-4295-c1e0-04544cf9100d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "cee05c32-3976-40ce-fc67-42ef58d375df",
+          "source": "244b58b5-958c-405b-d8b0-bffbaadce537",
+          "output": "@seqout",
+          "target": "5f8e7b58-319d-4ed3-e5a0-aa88016f3954",
+          "input": "@seqin"
+        },
+        {
+          "objID": "95c08c7d-62c4-4695-c966-716b68933f53",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "97839ab9-789c-411e-8e99-69a105d52bb6",
+          "input": "@seqin"
+        },
+        {
+          "objID": "37b742a5-0355-4af2-db7b-c8f8f9589f38",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "84258aa1-9d4c-44c0-c420-742fcbb77d17",
+          "input": "@seqin"
+        },
+        {
+          "objID": "cf58d90f-f9fd-4f93-ddff-08ad2f946b41",
+          "source": "5ac36e5f-49b6-47c0-f8bc-830f0c2d66dd",
+          "output": "variable",
+          "target": "3a39d742-e38a-4e84-9172-95fba6e7a24d",
+          "input": "@seqin"
+        }
+      ],
+      "localVariables": [],
+      "name": "Constant Load Setup",
+      "style": "page",
+      "left": 0,
+      "top": 0,
+      "width": 800,
+      "height": 600,
+      "scaleToFit": false,
+      "isUsedAsUserWidget": false,
+      "lvglLocalStyles": {
+        "objID": "9037dd98-6d88-46f5-9da8-e102248dfc1f"
+      }
+    },
+    {
+      "objID": "0c158da3-01b4-4109-8574-8bd5a76ed615",
+      "components": [
+        {
+          "objID": "172f28fa-6c21-4cc8-a961-60ac672c3d6e",
+          "type": "ShowPageActionComponent",
+          "left": -146,
+          "top": 532,
+          "width": 133,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "page": "Constant Load Setup"
+        },
+        {
+          "objID": "6790a7df-7aca-4d21-f6f9-5da33e8cf843",
+          "type": "ButtonDashboardWidget",
+          "left": 8,
+          "top": 532,
+          "width": 80,
+          "height": 60,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"BACK\"",
+          "style": {
+            "objID": "6e716e51-2e54-4eed-cd2b-d4bcde7c94f1",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "bb02de10-f4d6-41cd-fe01-997194494501",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "disabledStyle": {
+            "objID": "cd5445cf-d622-4d86-c7e7-caa6667d4269",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "930d31f7-b0c6-48a1-a77e-758a13abc33a",
+          "type": "ButtonDashboardWidget",
+          "left": 712,
+          "top": 532,
+          "width": 80,
+          "height": 60,
+          "customInputs": [
+            {
+              "objID": "fd7a3e91-7dec-4a23-dd8c-7fe6ae63c6a3",
+              "name": "enabled",
+              "type": "boolean"
+            }
+          ],
+          "customOutputs": [],
+          "data": "\"START\"",
+          "style": {
+            "objID": "c5b9bf24-348c-4446-f6b8-87c305b3613a",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#46aa00"
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "c9772036-016f-4de8-dbae-5ce6f5bccb0c",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "disabledStyle": {
+            "objID": "71d9e5b6-2963-4946-ab38-27158725772b",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "bb735789-4dfb-4633-bb87-286d90a4742a",
+          "type": "ButtonDashboardWidget",
+          "left": 573,
+          "top": 532,
+          "width": 80,
+          "height": 60,
+          "customInputs": [
+            {
+              "objID": "2047ad27-fc12-45b1-ec0e-3dbe65168a0b",
+              "name": "enabled",
+              "type": "boolean"
+            }
+          ],
+          "customOutputs": [],
+          "data": "\"STOP\"",
+          "style": {
+            "objID": "1a86e95a-765d-43c4-ec09-f720f88122c9",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#007ccb"
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "1275cc10-0ee5-4d41-f82c-7519c52c02ea",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "disabledStyle": {
+            "objID": "77dc6b6c-bd91-4a75-8073-54d02b26f6af",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "c38749f3-127c-4738-dabd-8c7a2ac61b0b",
+          "type": "LineChartWidget",
+          "left": 134,
+          "top": 10,
+          "width": 660,
+          "height": 240,
+          "customInputs": [
+            {
+              "objID": "1b92d1f4-c67e-4fdd-b133-fbe68a6550eb",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "style": {
+            "objID": "a05b3e97-e84c-4315-8b2a-2515f8997c79",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "xValue": "Date.now()",
+          "lines": [
+            {
+              "objID": "6ae4be4e-a1e8-46c8-a0e3-5e9cc1c63c9a",
+              "label": "\"PSU VOLT\"",
+              "color": "#2dc20f",
+              "value": "value",
+              "visible": "true"
+            }
+          ],
+          "title": "",
+          "displayModebar": "hover",
+          "showLegend": true,
+          "showXAxis": true,
+          "showYAxis": true,
+          "showGrid": true,
+          "showZeroLines": true,
+          "xAxisRangeOption": "floating",
+          "xAxisRangeFrom": 0,
+          "xAxisRangeTo": 10,
+          "yAxisRangeOption": "floating",
+          "yAxisRangeFrom": 0,
+          "yAxisRangeTo": 10,
+          "maxPoints": "40",
+          "margin": {
+            "objID": "c82296ce-7deb-40c8-fb75-32c01271973e",
+            "top": 50,
+            "right": 0,
+            "bottom": 50,
+            "left": 50
+          },
+          "markerStyle": {
+            "objID": "f84da960-099f-f770-711c-836b71023e59",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "7ae58b0d-3b34-47f6-c471-80ea31cd24b2",
+          "type": "LineChartWidget",
+          "left": 136,
+          "top": 261,
+          "width": 658,
+          "height": 240,
+          "customInputs": [
+            {
+              "objID": "bf8102ce-d734-4541-9646-aee718ae65c7",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "style": {
+            "objID": "7cabb003-04ec-40aa-adc3-49b6646971e7",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "xValue": "Date.now()",
+          "lines": [
+            {
+              "objID": "d6b0d52c-2b7e-4ce7-a09e-5e17d142067b",
+              "label": "\"psu amp\"",
+              "color": "#ed0c0c",
+              "value": "value",
+              "visible": "true"
+            }
+          ],
+          "title": "",
+          "displayModebar": "hover",
+          "showLegend": true,
+          "showXAxis": true,
+          "showYAxis": true,
+          "showGrid": true,
+          "showZeroLines": true,
+          "xAxisRangeOption": "floating",
+          "xAxisRangeFrom": 0,
+          "xAxisRangeTo": 10,
+          "yAxisRangeOption": "floating",
+          "yAxisRangeFrom": 0,
+          "yAxisRangeTo": 10,
+          "maxPoints": "40",
+          "margin": {
+            "objID": "8cffbccf-e5ac-4b68-93a5-023b6c85723b",
+            "top": 50,
+            "right": 0,
+            "bottom": 50,
+            "left": 50
+          },
+          "markerStyle": {
+            "objID": "dcd95e15-d1c7-c73b-af92-f919dcab2e81",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "40cc8e58-046a-451e-e5ef-69ad336d92b9",
+          "type": "ProgressDashboardWidget",
+          "left": 278,
+          "top": 551,
+          "width": 128,
+          "height": 20,
+          "customInputs": [],
+          "customOutputs": [],
+          "style": {
+            "objID": "192b2409-f86d-4709-b53f-a8bc6985256a",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "min": "0",
+          "max": "100",
+          "orientation": "horizontal"
+        },
+        {
+          "objID": "1df6dda0-52b8-4f04-9403-7e75b9588e94",
+          "type": "GaugeWidget",
+          "left": 8,
+          "top": 11,
+          "width": 120,
+          "height": 88,
+          "customInputs": [
+            {
+              "objID": "61e00194-9a06-4341-93b5-2d922ce6f8ad",
+              "name": "data",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "data": "data",
+          "style": {
+            "objID": "7bc65ec1-be4a-4350-8b2f-c60c59cb679d",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "title": "PSU Volt",
+          "minRange": "0",
+          "maxRange": "volt_start.value * 1.2",
+          "color": "#008000",
+          "margin": {
+            "objID": "dcb2b189-23ce-4e9f-c29f-3861322fe2c9",
+            "top": 50,
+            "right": 10,
+            "bottom": 10,
+            "left": 10
+          }
+        },
+        {
+          "objID": "0b2d3892-f6b4-485c-f27e-fc6d544bead9",
+          "type": "GaugeWidget",
+          "left": 7,
+          "top": 111,
+          "width": 120,
+          "height": 88,
+          "customInputs": [
+            {
+              "objID": "67001510-b6b9-4334-f085-b860a02d5f0e",
+              "name": "data",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "data": "data",
+          "style": {
+            "objID": "b1d904c0-8e15-4297-d3db-b73c6f9ec2a3",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "title": "PSU Amps",
+          "minRange": "0",
+          "maxRange": "current_max.value * 1.2",
+          "color": "#ff0026",
+          "margin": {
+            "objID": "cc3fad81-5b0f-48ec-819f-5d00cedf6931",
+            "top": 50,
+            "right": 10,
+            "bottom": 10,
+            "left": 10
+          }
+        },
+        {
+          "objID": "66299894-62f7-43e8-c180-f24ecafd2944",
+          "type": "GaugeWidget",
+          "left": 7,
+          "top": 212,
+          "width": 120,
+          "height": 88,
+          "customInputs": [
+            {
+              "objID": "c8d95378-16ec-4d46-8eb6-85ba128cdbd2",
+              "name": "data",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "data": "data",
+          "style": {
+            "objID": "5e882255-22af-4aa9-9ada-b34420fc0afb",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "title": "PSU Power",
+          "minRange": "0",
+          "maxRange": "data * 1.2",
+          "color": "#0309bf",
+          "margin": {
+            "objID": "a300b4f7-66df-4226-887d-f903891bf883",
+            "top": 50,
+            "right": 10,
+            "bottom": 10,
+            "left": 10
+          }
+        },
+        {
+          "objID": "52698358-1f4c-45e6-b1b8-d1ab6d2d7b46",
+          "type": "GaugeWidget",
+          "left": 8,
+          "top": 312,
+          "width": 120,
+          "height": 88,
+          "customInputs": [
+            {
+              "objID": "786e51f5-7dbd-406e-8ab8-065c4657639e",
+              "name": "data",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "data": "data",
+          "style": {
+            "objID": "9ed59419-c251-48f5-dd10-820856f9221b",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "title": "Load Power",
+          "minRange": "0",
+          "maxRange": "(volt_start.value * current_max.value) * 1.2",
+          "color": "#021bd4",
+          "margin": {
+            "objID": "97bba951-11df-4394-9ef8-1953c127260b",
+            "top": 50,
+            "right": 10,
+            "bottom": 10,
+            "left": 10
+          }
+        },
+        {
+          "objID": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
+          "type": "GaugeWidget",
+          "left": 9,
+          "top": 413,
+          "width": 120,
+          "height": 88,
+          "customInputs": [
+            {
+              "objID": "e0d3048f-5856-4fd6-e9a2-107557c2c8f3",
+              "name": "PSU_POW",
+              "type": "float"
+            },
+            {
+              "objID": "7fce9c34-4f63-42b1-92ba-e3d8211758ab",
+              "name": "LOAD_POW",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "data": "(LOAD_POW/PSU_POW)*100",
+          "style": {
+            "objID": "8d8c1750-c2d0-493e-d6ae-a67dda4bb6f4",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "borderRadius": "10"
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "title": "Efficiency",
+          "minRange": "0",
+          "maxRange": "100",
+          "color": "#03ddcf",
+          "margin": {
+            "objID": "a7b25998-08ec-4a69-afa2-5e7f08a59580",
+            "top": 50,
+            "right": 10,
+            "bottom": 10,
+            "left": 10
+          }
+        },
+        {
+          "objID": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "type": "SCPIActionComponent",
+          "left": -956,
+          "top": 180,
+          "width": 313,
+          "height": 106,
+          "customInputs": [],
+          "customOutputs": [
+            {
+              "objID": "54981773-7796-4e7e-f020-f7b1bbfa2646",
+              "name": "voltage",
+              "type": "float"
+            },
+            {
+              "objID": "300b10bb-ba1d-4e43-b2df-aabd50b0c064",
+              "name": "current",
+              "type": "float"
+            },
+            {
+              "objID": "4779c866-d2bb-46fc-a186-51b566f51f9d",
+              "name": "power",
+              "type": "float"
+            }
+          ],
+          "catchError": true,
+          "instrument": "PSU",
+          "scpi": "voltage = MEAS:VOLT{psu_test_channel+1}?\ncurrent = MEAS:CURR{psu_test_channel+1}?\npower = MEAS:POW{psu_test_channel+1}?",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "6a239a29-cde9-43f5-d5eb-9f368fb3d343",
+          "type": "IsTrueActionComponent",
+          "left": -672,
+          "top": 365,
+          "width": 98,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "continue"
+        },
+        {
+          "objID": "f4a18c17-e717-4fde-e305-68031fce27aa",
+          "type": "SetVariableActionComponent",
+          "left": 384,
+          "top": 769,
+          "width": 146,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "5d7a2c7a-c26f-418a-9a6b-904c52e19221",
+              "variable": "continue",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "objID": "50cd8401-f7e4-4fc0-87d9-caaacf6abab3",
+          "type": "SetVariableActionComponent",
+          "left": -940,
+          "top": -65,
+          "width": 140,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "ab8c59e4-6e1d-4965-8610-3fee076a24b6",
+              "variable": "continue",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "objID": "336e9ebe-b75a-484e-d0f2-5f19c4753c72",
+          "type": "WatchVariableActionComponent",
+          "left": 800,
+          "top": 621,
+          "width": 246,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "PSU.isConnected && !continue"
+        },
+        {
+          "objID": "dd120e4f-2bb0-4141-f082-6ab18bd91cfe",
+          "type": "WatchVariableActionComponent",
+          "left": 345,
+          "top": 621,
+          "width": 123,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "variable": "continue"
+        },
+        {
+          "objID": "581972fd-deac-4765-e676-11027587c210",
+          "type": "DelayActionComponent",
+          "left": -323,
+          "top": 274,
+          "width": 151,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "log_frequency.value"
+        },
+        {
+          "objID": "45969a43-df73-492d-f9e6-ee2da52abbf8",
+          "type": "SCPIActionComponent",
+          "left": -1029,
+          "top": 64,
+          "width": 170,
+          "height": 67,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "OUT{psu_test_channel+1} 1\nOUT{psu_aux_channel+1} 1",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
+          "type": "EvalExprActionComponent",
+          "left": -598,
+          "top": 54,
+          "width": 547,
+          "height": 54,
+          "customInputs": [
+            {
+              "objID": "3591fc8a-518f-4765-b0db-6e888ec95a9c",
+              "name": "voltage",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "description": "",
+          "expression": "Flow.parseFloat(String.substring(voltage, 0, String.length(voltage)-1))"
+        },
+        {
+          "objID": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
+          "type": "EvalExprActionComponent",
+          "left": -596,
+          "top": 129,
+          "width": 545,
+          "height": 54,
+          "customInputs": [
+            {
+              "objID": "9f27a278-875d-4643-f712-9011d6511033",
+              "name": "current",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "description": "",
+          "expression": "Flow.parseFloat(String.substring(current, 0, String.length(current)-1))"
+        },
+        {
+          "objID": "4a02a52d-17c6-4884-ae7c-257e8d34a070",
+          "type": "SCPIActionComponent",
+          "left": 620,
+          "top": 769,
+          "width": 89,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "OUT:ALL 0",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
+          "type": "SCPIActionComponent",
+          "left": -818,
+          "top": 64,
+          "width": 97,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LOAD ON",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
+          "type": "SCPIActionComponent",
+          "left": -557,
+          "top": 235,
+          "width": 166,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [
+            {
+              "objID": "8fd53a0a-c3b0-4e93-c588-97950e740f64",
+              "name": "power",
+              "type": "float"
+            }
+          ],
+          "instrument": "LOAD",
+          "scpi": "power = MEAS:POW?",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "a55673c4-3b9a-42f6-d4e9-4483137bbb15",
+          "type": "SCPIActionComponent",
+          "left": 620,
+          "top": 852,
+          "width": 97,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LOAD OFF",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
+          "type": "CompareActionComponent",
+          "left": -1009,
+          "top": 479,
+          "width": 248,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "A": "volt_variable",
+          "B": "volt_end.value",
+          "operator": "<="
+        },
+        {
+          "objID": "502295b2-fffb-444e-a57f-86dc42839488",
+          "type": "SetVariableActionComponent",
+          "left": -988,
+          "top": 594,
+          "width": 325,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "33679ce6-b17d-4361-a9c6-e6299c1a0c91",
+              "variable": "volt_variable",
+              "value": "volt_variable-volt_step.value"
+            }
+          ]
+        },
+        {
+          "objID": "6893f50a-5817-4ca9-e672-cec06d36080d",
+          "type": "SCPIActionComponent",
+          "left": -905,
+          "top": 688,
+          "width": 262,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "VSET{psu_test_channel+1} {volt_variable}",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "f04ce285-12a3-4dda-fac2-96603abb25e5",
+          "type": "DelayActionComponent",
+          "left": -796,
+          "top": 769,
+          "width": 163,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "step_delay.value*1000"
+        },
+        {
+          "objID": "cbd16289-2949-4c44-d798-9f6ffc2f7997",
+          "type": "FileWrite",
+          "left": 139,
+          "top": 770,
+          "width": 87,
+          "height": 41,
+          "customInputs": [],
+          "customOutputs": []
+        }
+      ],
+      "connectionLines": [
+        {
+          "objID": "6bf3957b-5df0-434d-e61a-1a73d36c256d",
+          "source": "6790a7df-7aca-4d21-f6f9-5da33e8cf843",
+          "output": "CLICKED",
+          "target": "172f28fa-6c21-4cc8-a961-60ac672c3d6e",
+          "input": "@seqin"
+        },
+        {
+          "objID": "4fbe77c8-a48b-4300-a945-fee2605645f8",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "voltage",
+          "target": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
+          "input": "voltage"
+        },
+        {
+          "objID": "1b016208-77c3-42be-a559-9f88e3fec5cd",
+          "source": "bb735789-4dfb-4633-bb87-286d90a4742a",
+          "output": "CLICKED",
+          "target": "f4a18c17-e717-4fde-e305-68031fce27aa",
+          "input": "@seqin"
+        },
+        {
+          "objID": "b9a1e4a6-6340-473e-99c4-13d03150584f",
+          "source": "dd120e4f-2bb0-4141-f082-6ab18bd91cfe",
+          "output": "variable",
+          "target": "bb735789-4dfb-4633-bb87-286d90a4742a",
+          "input": "enabled"
+        },
+        {
+          "objID": "7ae05545-2ea3-4145-f463-693b907c30cf",
+          "source": "45969a43-df73-492d-f9e6-ee2da52abbf8",
+          "output": "@seqout",
+          "target": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
+          "input": "@seqin"
+        },
+        {
+          "objID": "314cb6fc-fe21-4103-d500-2bee0ef4faab",
+          "source": "6a239a29-cde9-43f5-d5eb-9f368fb3d343",
+          "output": "True",
+          "target": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "input": "@seqin"
+        },
+        {
+          "objID": "4b9b27b9-a462-448c-d321-21b43aa8379e",
+          "source": "581972fd-deac-4765-e676-11027587c210",
+          "output": "@seqout",
+          "target": "6a239a29-cde9-43f5-d5eb-9f368fb3d343",
+          "input": "@seqin"
+        },
+        {
+          "objID": "15518981-a024-4fca-9dfe-36efc5768389",
+          "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
+          "output": "@seqout",
+          "target": "581972fd-deac-4765-e676-11027587c210",
+          "input": "@seqin"
+        },
+        {
+          "objID": "11c49dc1-bcd8-4307-f5ac-5331444d01b0",
+          "source": "50cd8401-f7e4-4fc0-87d9-caaacf6abab3",
+          "output": "@seqout",
+          "target": "45969a43-df73-492d-f9e6-ee2da52abbf8",
+          "input": "@seqin"
+        },
+        {
+          "objID": "18d55e7b-f56d-44a8-f485-5eba81396af6",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "current",
+          "target": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
+          "input": "current"
+        },
+        {
+          "objID": "0922cd2d-f9ca-4edb-95f7-79ac43310f80",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "@error",
+          "target": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "input": "@seqin"
+        },
+        {
+          "objID": "0d88e467-5c49-4293-f270-ad91654c1c73",
+          "source": "336e9ebe-b75a-484e-d0f2-5f19c4753c72",
+          "output": "variable",
+          "target": "930d31f7-b0c6-48a1-a77e-758a13abc33a",
+          "input": "enabled"
+        },
+        {
+          "objID": "8604e51b-901c-470e-c1b3-91a9200e08a4",
+          "source": "930d31f7-b0c6-48a1-a77e-758a13abc33a",
+          "output": "CLICKED",
+          "target": "50cd8401-f7e4-4fc0-87d9-caaacf6abab3",
+          "input": "@seqin"
+        },
+        {
+          "objID": "848d73fe-ad58-4608-ad05-a33a9c6e9b67",
+          "source": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
+          "output": "result",
+          "target": "c38749f3-127c-4738-dabd-8c7a2ac61b0b",
+          "input": "value"
+        },
+        {
+          "objID": "7c101974-2f44-4197-e76c-4e328651c77d",
+          "source": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
+          "output": "result",
+          "target": "7ae58b0d-3b34-47f6-c471-80ea31cd24b2",
+          "input": "value"
+        },
+        {
+          "objID": "4f020efd-5d41-42c7-879e-206c533fdbda",
+          "source": "f4a18c17-e717-4fde-e305-68031fce27aa",
+          "output": "@seqout",
+          "target": "4a02a52d-17c6-4884-ae7c-257e8d34a070",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c2a3a086-b09e-4fb7-a72a-1c6337a7fc6f",
+          "source": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
+          "output": "result",
+          "target": "1df6dda0-52b8-4f04-9403-7e75b9588e94",
+          "input": "data"
+        },
+        {
+          "objID": "7a6b8457-c0c2-476f-c73b-4ba6dbc7b8ed",
+          "source": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
+          "output": "result",
+          "target": "0b2d3892-f6b4-485c-f27e-fc6d544bead9",
+          "input": "data"
+        },
+        {
+          "objID": "e1ffaa4c-16e2-4358-fe4a-48bad8fae6dc",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "power",
+          "target": "66299894-62f7-43e8-c180-f24ecafd2944",
+          "input": "data"
+        },
+        {
+          "objID": "e39570c5-ff5a-4d6c-b057-8e73b1c51a1c",
+          "source": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
+          "output": "@seqout",
+          "target": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "input": "@seqin"
+        },
+        {
+          "objID": "0d4dd7a0-1202-434a-bdb1-844d3341209d",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "@seqout",
+          "target": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
+          "input": "@seqin"
+        },
+        {
+          "objID": "48d9f8bc-4d03-4b68-c83c-8ccd06076fdd",
+          "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
+          "output": "power",
+          "target": "52698358-1f4c-45e6-b1b8-d1ab6d2d7b46",
+          "input": "data"
+        },
+        {
+          "objID": "00c290a8-b46a-4016-ae50-9db41ba6344b",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "power",
+          "target": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
+          "input": "PSU_POW"
+        },
+        {
+          "objID": "493adddf-ed1a-43de-a900-4fe333b1e216",
+          "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
+          "output": "power",
+          "target": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
+          "input": "LOAD_POW"
+        },
+        {
+          "objID": "fff3ce27-e9f9-4c7e-d65d-0cdb8b7f3a4a",
+          "source": "f4a18c17-e717-4fde-e305-68031fce27aa",
+          "output": "@seqout",
+          "target": "a55673c4-3b9a-42f6-d4e9-4483137bbb15",
+          "input": "@seqin"
+        },
+        {
+          "objID": "9d1d5bcb-715c-453b-d093-d48687a63104",
+          "source": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
+          "output": "True",
+          "target": "f4a18c17-e717-4fde-e305-68031fce27aa",
+          "input": "@seqin"
+        },
+        {
+          "objID": "9db69dcc-39e1-4a65-d077-0429f2659cd5",
+          "source": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
+          "output": "False",
+          "target": "502295b2-fffb-444e-a57f-86dc42839488",
+          "input": "@seqin"
+        },
+        {
+          "objID": "2784e2c2-a3cd-48f6-8b01-e4498ec0fe1c",
+          "source": "502295b2-fffb-444e-a57f-86dc42839488",
+          "output": "@seqout",
+          "target": "6893f50a-5817-4ca9-e672-cec06d36080d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3cbb87d3-9ab1-4042-e4f6-498ce39435e1",
+          "source": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
+          "output": "@seqout",
+          "target": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
+          "input": "@seqin"
+        },
+        {
+          "objID": "103d60a0-a93e-4164-b047-37257e89e7d1",
+          "source": "6893f50a-5817-4ca9-e672-cec06d36080d",
+          "output": "@seqout",
+          "target": "f04ce285-12a3-4dda-fac2-96603abb25e5",
+          "input": "@seqin"
+        },
+        {
+          "objID": "70242fa6-1d36-475d-afd1-e6fc5052e45b",
+          "source": "f04ce285-12a3-4dda-fac2-96603abb25e5",
+          "output": "@seqout",
+          "target": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
+          "input": "@seqin"
+        }
+      ],
+      "localVariables": [
+        {
+          "objID": "a0ca25eb-3afa-4166-9ef6-58f937e6e8ba",
+          "name": "continue",
+          "type": "boolean",
+          "defaultValue": "false"
+        }
+      ],
+      "name": "Constant Load Measurement",
+      "style": "page",
+      "left": 0,
+      "top": 0,
+      "width": 800,
+      "height": 600,
+      "isUsedAsUserWidget": false,
+      "lvglLocalStyles": {
+        "objID": "79226a0e-d149-4ea9-946e-1fe1a86ab46e"
+      }
+    }
+  ],
+  "userWidgets": [
+    {
+      "objID": "ecac6f65-8a31-46ff-c16a-2607377f7fbc",
+      "components": [
+        {
+          "objID": "6fecb72a-5f24-4c22-f97b-113d9f6b8ba1",
+          "type": "TextInputWidget",
+          "left": 90,
+          "top": 0,
+          "width": 50,
+          "height": 32,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "number_input.text",
+          "visible": "",
+          "style": {
+            "objID": "e746e2c2-b624-4e1d-aec3-3005bda57a35",
+            "useStyle": "default",
+            "conditionalStyles": [
+              {
+                "objID": "174acd67-8f41-49e5-a359-22b895fa3fff",
+                "style": "error",
+                "condition": "number_input.value == null"
+              }
+            ],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "96452000-2e55-4c10-a5a7-b6f69de4fdc2",
+              "eventName": "ON_INPUT",
+              "handlerType": "flow"
+            }
+          ],
+          "placehoder": "number_input.MIN + \" - \" + number_input.MAX"
+        },
+        {
+          "objID": "f9c6b723-254c-4771-ddf2-733e2c6610d6",
+          "type": "TextDashboardWidget",
+          "left": 0,
+          "top": 0,
+          "width": 90,
+          "height": 32,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "number_input.label",
+          "style": {
+            "objID": "8e29885a-068f-454e-9499-f20cbcec4896",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "timeline": [],
+          "eventHandlers": [],
+          "name": ""
+        },
+        {
+          "objID": "27647a52-cc37-4d2d-a8c9-bbc0a7e5a8c9",
+          "type": "TextDashboardWidget",
+          "left": 0,
+          "top": 32,
+          "width": 170,
+          "height": 32,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "number_input.error",
+          "style": {
+            "objID": "d27c5305-24b9-4d51-c9e0-8ff0029ad8a3",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "fontSize": "12",
+            "color": "red"
+          },
+          "timeline": [],
+          "eventHandlers": []
+        },
+        {
+          "objID": "37aed484-6bc7-42d2-8de0-51f9c3e87809",
+          "type": "InputActionComponent",
+          "left": -7,
+          "top": -103,
+          "width": 87,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "name": "value",
+          "inputType": "struct:NumberInput"
+        },
+        {
+          "objID": "15959391-6910-465a-ee2a-5037cffc694c",
+          "type": "SetVariableActionComponent",
+          "left": 149,
+          "top": -103,
+          "width": 212,
+          "height": 55,
+          "customInputs": [
+            {
+              "objID": "ce54fa9d-237b-4312-968e-d539e8639cfb",
+              "name": "value",
+              "type": "struct:NumberInput"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "ec6ddac6-fbb7-4969-e7d8-43a7ef70f5d4",
+              "variable": "number_input",
+              "value": "value"
+            }
+          ]
+        },
+        {
+          "objID": "3446e103-88d5-4a16-e40f-b13b1d9299d2",
+          "type": "SetVariableActionComponent",
+          "left": 626,
+          "top": 169,
+          "width": 269,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "ab04810f-858b-45a6-c5af-cd2bc4b7f754",
+              "variable": "number_input.error",
+              "value": "\"Invalid value\""
+            }
+          ]
+        },
+        {
+          "objID": "ef52a3c0-12fd-4198-8621-1057f865c7e5",
+          "type": "EvalExprActionComponent",
+          "left": 287,
+          "top": 107,
+          "width": 279,
+          "height": 70,
+          "customInputs": [
+            {
+              "objID": "b6ee48b8-76dd-4ce0-803e-effccddb5d0e",
+              "name": "event",
+              "type": "struct:$TextInputChangeEvent"
+            }
+          ],
+          "customOutputs": [],
+          "catchError": true,
+          "expression": "Flow.parseFloat(event.value)"
+        },
+        {
+          "objID": "a49784a0-7f16-4372-df5b-a8e52c85402e",
+          "type": "SetVariableActionComponent",
+          "left": 1206,
+          "top": 107,
+          "width": 249,
+          "height": 75,
+          "customInputs": [
+            {
+              "objID": "95823ea0-4ce0-4273-c296-5f2a408140f7",
+              "name": "value",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "476fea88-7cab-4cdd-b399-00743de92eef",
+              "variable": "number_input.value",
+              "value": "value"
+            },
+            {
+              "objID": "acaa0ab1-d098-4933-9617-8478fc6c6304",
+              "variable": "number_input.error",
+              "value": "\"\""
+            }
+          ]
+        },
+        {
+          "objID": "f0679ce3-ced8-4c60-aaaa-83fc215d0095",
+          "type": "IsTrueActionComponent",
+          "left": 677,
+          "top": 29,
+          "width": 409,
+          "height": 70,
+          "customInputs": [
+            {
+              "objID": "7c02c45e-2ece-474b-985a-1c64fc1005e6",
+              "name": "value",
+              "type": "any"
+            }
+          ],
+          "customOutputs": [],
+          "value": "value < number_input.MIN || value > number_input.MAX"
+        },
+        {
+          "objID": "62743b0d-a433-44a2-e55a-beee29c3c828",
+          "type": "SetVariableActionComponent",
+          "left": 1206,
+          "top": 0,
+          "width": 472,
+          "height": 80,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "a3e722df-63a4-44bf-dae6-8309370f6f3c",
+              "variable": "number_input.error",
+              "value": "\"Must be between \" +\nnumber_input.MIN + number_input.unit + \" and \" +\nnumber_input.MAX + number_input.unit"
+            }
+          ]
+        },
+        {
+          "objID": "48a38117-0a0c-4d90-bcca-19ef62d5142e",
+          "type": "TextDashboardWidget",
+          "left": 139,
+          "top": 0,
+          "width": 20,
+          "height": 32,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "number_input.unit",
+          "style": {
+            "objID": "16a6e7dd-57aa-4c7c-8e72-59adc8084aee",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "alignHorizontal": "center"
+          },
+          "timeline": [],
+          "eventHandlers": []
+        }
+      ],
+      "connectionLines": [
+        {
+          "objID": "8d28c8d0-a4f7-4ea0-a323-c0ab6f49e895",
+          "source": "37aed484-6bc7-42d2-8de0-51f9c3e87809",
+          "output": "@seqout",
+          "target": "15959391-6910-465a-ee2a-5037cffc694c",
+          "input": "value"
+        },
+        {
+          "objID": "4dc489dc-b1b7-4f30-dda6-20e6cd5e199f",
+          "source": "ef52a3c0-12fd-4198-8621-1057f865c7e5",
+          "output": "@error",
+          "target": "3446e103-88d5-4a16-e40f-b13b1d9299d2",
+          "input": "@seqin"
+        },
+        {
+          "objID": "8a4d08e3-8d49-4cae-87f3-195c9f58ca90",
+          "source": "ef52a3c0-12fd-4198-8621-1057f865c7e5",
+          "output": "result",
+          "target": "a49784a0-7f16-4372-df5b-a8e52c85402e",
+          "input": "value"
+        },
+        {
+          "objID": "8d11ee44-1831-4528-b170-1f3c8bd8491a",
+          "source": "ef52a3c0-12fd-4198-8621-1057f865c7e5",
+          "output": "result",
+          "target": "f0679ce3-ced8-4c60-aaaa-83fc215d0095",
+          "input": "value"
+        },
+        {
+          "objID": "e7c439b9-4c9c-43cd-d29e-f6d3646ce152",
+          "source": "f0679ce3-ced8-4c60-aaaa-83fc215d0095",
+          "output": "True",
+          "target": "62743b0d-a433-44a2-e55a-beee29c3c828",
+          "input": "@seqin"
+        },
+        {
+          "objID": "93731105-f562-456f-d770-c16eeb6e583b",
+          "source": "f0679ce3-ced8-4c60-aaaa-83fc215d0095",
+          "output": "False",
+          "target": "a49784a0-7f16-4372-df5b-a8e52c85402e",
+          "input": "@seqin"
+        },
+        {
+          "objID": "7aeac066-6b0e-4026-e5d5-dc894d75d279",
+          "source": "6fecb72a-5f24-4c22-f97b-113d9f6b8ba1",
+          "output": "ON_INPUT",
+          "target": "ef52a3c0-12fd-4198-8621-1057f865c7e5",
+          "input": "event"
+        }
+      ],
+      "localVariables": [
+        {
+          "objID": "b2c7337c-cf63-4bff-f605-20eee49640ec",
+          "name": "number_input",
+          "type": "struct:NumberInput",
+          "defaultValue": "null",
+          "persistent": false
+        }
+      ],
+      "name": "NumberInput",
+      "left": 0,
+      "top": 0,
+      "width": 170,
+      "height": 64,
+      "isUsedAsUserWidget": true,
+      "lvglLocalStyles": {
+        "objID": "c9d43b8f-c4a3-4701-9919-5bf0a8de75f8"
+      }
+    }
+  ],
+  "styles": [
+    {
+      "objID": "04157789-da53-2f4a-e658-4ca10aa5fbef",
+      "name": "default",
+      "conditionalStyles": [],
+      "childStyles": []
+    },
+    {
+      "objID": "c49c1adf-a610-28c0-027c-0e452dadb32b",
+      "name": "page",
+      "conditionalStyles": [],
+      "childStyles": [],
+      "backgroundColor": "page_color",
+      "css": "\n"
+    },
+    {
+      "objID": "3648e587-7bef-4ebc-8723-57d223bd833c",
+      "name": "error",
+      "conditionalStyles": [],
+      "childStyles": [],
+      "borderSize": "2",
+      "borderColor": "#ff0000",
+      "borderStyle": "solid"
+    }
+  ],
+  "bitmaps": [],
+  "colors": [
+    {
+      "objID": "e6c28e5a-fe7f-09ed-9223-17769968ebea",
+      "name": "page_color"
+    }
+  ],
+  "themes": [
+    {
+      "objID": "a7943c4e-90c6-cf58-2c43-9f24cf4b097c",
+      "name": "default",
+      "colors": [
+        "#c7b2c7"
+      ]
+    }
+  ]
+}
