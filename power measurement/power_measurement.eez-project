@@ -74,7 +74,7 @@
         "objID": "5a43303f-2ea3-4bc7-ac88-5a5264dfcb44",
         "name": "psu_parallel",
         "type": "boolean",
-        "defaultValue": "false",
+        "defaultValue": "true",
         "persistent": false,
         "native": false
       },
@@ -2207,9 +2207,9 @@
           "eventHandlers": []
         },
         {
-          "objID": "1f4de5f2-90e2-444f-cc1f-af1d0d0a2816",
+          "objID": "93f178db-3667-489c-9566-47f727d6ceb5",
           "type": "SCPIActionComponent",
-          "left": 1083,
+          "left": 1081,
           "top": 104,
           "width": 225,
           "height": 67,
@@ -2405,10 +2405,10 @@
           "input": "@seqin"
         },
         {
-          "objID": "a9ab97bc-0fd5-41a6-b926-81c2159136ca",
+          "objID": "2cfe37c7-8565-40ea-d68a-7e7243f7fb95",
           "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
           "output": "CLICKED",
-          "target": "1f4de5f2-90e2-444f-cc1f-af1d0d0a2816",
+          "target": "93f178db-3667-489c-9566-47f727d6ceb5",
           "input": "@seqin"
         }
       ],
@@ -2479,7 +2479,13 @@
           "top": 532,
           "width": 80,
           "height": 60,
-          "customInputs": [],
+          "customInputs": [
+            {
+              "objID": "8d453b2d-4670-4bf4-fad4-7a76774f0c77",
+              "name": "enabled",
+              "type": "boolean"
+            }
+          ],
           "customOutputs": [],
           "data": "\"START\"",
           "style": {
@@ -2512,7 +2518,13 @@
           "top": 532,
           "width": 80,
           "height": 60,
-          "customInputs": [],
+          "customInputs": [
+            {
+              "objID": "2047ad27-fc12-45b1-ec0e-3dbe65168a0b",
+              "name": "enabled",
+              "type": "boolean"
+            }
+          ],
           "customOutputs": [],
           "data": "\"STOP\"",
           "style": {
@@ -2710,7 +2722,7 @@
           "timeline": [],
           "eventHandlers": [],
           "title": "PSU Volt",
-          "minRange": "",
+          "minRange": "0",
           "maxRange": "volt_start.value * 1.2",
           "color": "#008000",
           "margin": {
@@ -2747,7 +2759,7 @@
           "timeline": [],
           "eventHandlers": [],
           "title": "PSU Amps",
-          "minRange": "",
+          "minRange": "0",
           "maxRange": "current_max.value * 1.2",
           "color": "#ff0026",
           "margin": {
@@ -2784,7 +2796,7 @@
           "timeline": [],
           "eventHandlers": [],
           "title": "PSU Power",
-          "minRange": "",
+          "minRange": "0",
           "maxRange": "data * 1.2",
           "color": "#0309bf",
           "margin": {
@@ -2821,7 +2833,7 @@
           "timeline": [],
           "eventHandlers": [],
           "title": "Load Power",
-          "minRange": "",
+          "minRange": "0",
           "maxRange": "(volt_start.value * current_max.value) * 1.2",
           "color": "#021bd4",
           "margin": {
@@ -2877,8 +2889,8 @@
         {
           "objID": "bbd405c5-1257-43ac-b64e-852e82716cbe",
           "type": "SCPIActionComponent",
-          "left": -1298,
-          "top": 163,
+          "left": -1759,
+          "top": 38,
           "width": 313,
           "height": 106,
           "customInputs": [],
@@ -2908,8 +2920,8 @@
         {
           "objID": "6a239a29-cde9-43f5-d5eb-9f368fb3d343",
           "type": "IsTrueActionComponent",
-          "left": -1109,
-          "top": 516,
+          "left": -1277,
+          "top": 360,
           "width": 98,
           "height": 70,
           "customInputs": [],
@@ -2919,8 +2931,8 @@
         {
           "objID": "f4a18c17-e717-4fde-e305-68031fce27aa",
           "type": "SetVariableActionComponent",
-          "left": 727,
-          "top": 695,
+          "left": 876,
+          "top": 706,
           "width": 146,
           "height": 55,
           "customInputs": [],
@@ -2934,27 +2946,10 @@
           ]
         },
         {
-          "objID": "50cd8401-f7e4-4fc0-87d9-caaacf6abab3",
-          "type": "SetVariableActionComponent",
-          "left": -1294,
-          "top": -75,
-          "width": 140,
-          "height": 55,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "ab8c59e4-6e1d-4965-8610-3fee076a24b6",
-              "variable": "continue",
-              "value": "true"
-            }
-          ]
-        },
-        {
           "objID": "581972fd-deac-4765-e676-11027587c210",
           "type": "DelayActionComponent",
-          "left": -1271,
-          "top": 516,
+          "left": -1446,
+          "top": 360,
           "width": 120,
           "height": 54,
           "customInputs": [],
@@ -2964,8 +2959,8 @@
         {
           "objID": "45969a43-df73-492d-f9e6-ee2da52abbf8",
           "type": "SCPIActionComponent",
-          "left": -1296,
-          "top": 42,
+          "left": -2265,
+          "top": 413,
           "width": 170,
           "height": 67,
           "customInputs": [],
@@ -2976,46 +2971,10 @@
           "delay": "null"
         },
         {
-          "objID": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
-          "type": "EvalExprActionComponent",
-          "left": -854,
-          "top": -20,
-          "width": 547,
-          "height": 54,
-          "customInputs": [
-            {
-              "objID": "3591fc8a-518f-4765-b0db-6e888ec95a9c",
-              "name": "voltage",
-              "type": "float"
-            }
-          ],
-          "customOutputs": [],
-          "description": "",
-          "expression": "Flow.parseFloat(String.substring(voltage, 0, String.length(voltage)-1))"
-        },
-        {
-          "objID": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
-          "type": "EvalExprActionComponent",
-          "left": -852,
-          "top": 34,
-          "width": 545,
-          "height": 54,
-          "customInputs": [
-            {
-              "objID": "9f27a278-875d-4643-f712-9011d6511033",
-              "name": "current",
-              "type": "float"
-            }
-          ],
-          "customOutputs": [],
-          "description": "",
-          "expression": "Flow.parseFloat(String.substring(current, 0, String.length(current)-1))"
-        },
-        {
           "objID": "4a02a52d-17c6-4884-ae7c-257e8d34a070",
           "type": "SCPIActionComponent",
-          "left": 919,
-          "top": 670,
+          "left": 1068,
+          "top": 681,
           "width": 89,
           "height": 54,
           "customInputs": [],
@@ -3028,8 +2987,8 @@
         {
           "objID": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
           "type": "SCPIActionComponent",
-          "left": -1075,
-          "top": 45,
+          "left": -2051,
+          "top": 413,
           "width": 97,
           "height": 54,
           "customInputs": [],
@@ -3042,8 +3001,8 @@
         {
           "objID": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
           "type": "SCPIActionComponent",
-          "left": -910,
-          "top": 163,
+          "left": -1360,
+          "top": -2,
           "width": 166,
           "height": 54,
           "customInputs": [],
@@ -3062,8 +3021,8 @@
         {
           "objID": "a55673c4-3b9a-42f6-d4e9-4483137bbb15",
           "type": "SCPIActionComponent",
-          "left": 919,
-          "top": 724,
+          "left": 1068,
+          "top": 735,
           "width": 97,
           "height": 54,
           "customInputs": [],
@@ -3076,8 +3035,8 @@
         {
           "objID": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
           "type": "CompareActionComponent",
-          "left": -967,
-          "top": 681,
+          "left": -1759,
+          "top": 735,
           "width": 248,
           "height": 70,
           "customInputs": [],
@@ -3089,8 +3048,8 @@
         {
           "objID": "502295b2-fffb-444e-a57f-86dc42839488",
           "type": "SetVariableActionComponent",
-          "left": -926,
-          "top": 794,
+          "left": -1448,
+          "top": 789,
           "width": 325,
           "height": 55,
           "customInputs": [],
@@ -3106,8 +3065,8 @@
         {
           "objID": "6893f50a-5817-4ca9-e672-cec06d36080d",
           "type": "SCPIActionComponent",
-          "left": -843,
-          "top": 888,
+          "left": -1064,
+          "top": 789,
           "width": 262,
           "height": 54,
           "customInputs": [],
@@ -3120,8 +3079,8 @@
         {
           "objID": "f04ce285-12a3-4dda-fac2-96603abb25e5",
           "type": "DelayActionComponent",
-          "left": -734,
-          "top": 969,
+          "left": -749,
+          "top": 789,
           "width": 163,
           "height": 54,
           "customInputs": [],
@@ -3131,8 +3090,8 @@
         {
           "objID": "90672e82-da49-4b44-b283-5b497c22cae7",
           "type": "FileSaveDialog",
-          "left": 88,
-          "top": 971,
+          "left": -633,
+          "top": 588,
           "width": 117,
           "height": 52,
           "customInputs": [],
@@ -3142,8 +3101,8 @@
         {
           "objID": "b57fc1c6-e103-468b-df09-f223e249f2df",
           "type": "ShowFileInFolder",
-          "left": 290,
-          "top": 1012,
+          "left": -431,
+          "top": 629,
           "width": 132,
           "height": 52,
           "customInputs": [
@@ -3159,8 +3118,8 @@
         {
           "objID": "35915cfd-b330-4cec-fe75-238e9fd73bd9",
           "type": "FileAppend",
-          "left": 290,
-          "top": 928,
+          "left": -431,
+          "top": 545,
           "width": 129,
           "height": 54,
           "customInputs": [
@@ -3172,7 +3131,7 @@
           ],
           "customOutputs": [],
           "filePath": "file_path",
-          "content": "measured_psu_voltage + \",\" + measured_psu_current",
+          "content": "measured_psu_voltage + \",\" + measured_psu_current + \",\" + measured_psu_power",
           "encoding": "\"utf-8\""
         },
         {
@@ -3231,8 +3190,8 @@
         {
           "objID": "c03c83e5-e518-4166-e413-0659dc702c74",
           "type": "IsTrueActionComponent",
-          "left": 93,
-          "top": 888,
+          "left": -628,
+          "top": 505,
           "width": 116,
           "height": 70,
           "customInputs": [],
@@ -3240,201 +3199,119 @@
           "value": "log_results"
         },
         {
-          "objID": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
+          "objID": "dff9fbf9-b694-4035-8109-d80760ebd487",
           "type": "SetVariableActionComponent",
-          "left": -791,
-          "top": 410,
-          "width": 576,
+          "left": -1039,
+          "top": 35,
+          "width": 677,
           "height": 95,
           "customInputs": [
             {
-              "objID": "5a836e03-b873-4d4b-d413-887489a5bc1e",
-              "name": "measured_psu_voltage",
-              "type": "float"
+              "objID": "15f4dc03-e739-42da-934b-4c972c074150",
+              "name": "voltage",
+              "type": "string"
             },
             {
-              "objID": "2460b032-3c89-458c-b7df-2f5ebcf84d09",
-              "name": "measured_psu_current",
-              "type": "float"
+              "objID": "0fc6ced8-5b9d-4614-a980-fb950d5a5adf",
+              "name": "current",
+              "type": "string"
             },
             {
-              "objID": "a4f78d3f-f064-4735-e83f-51354125cd1f",
-              "name": "measured_psu_power",
-              "type": "float"
-            }
-          ],
-          "customOutputs": [
-            {
-              "objID": "363a6fe2-9119-458f-b235-cb131769238a",
-              "name": "measured_psu_voltage",
-              "type": "float"
-            },
-            {
-              "objID": "7b5ccfce-31ab-4a4e-a6af-d7bf4d4f49f1",
-              "name": "measured_psu_current",
-              "type": "float"
-            },
-            {
-              "objID": "b0849788-5e47-41cb-85b8-f6dc1c14fd29",
-              "name": "measured_psu_power",
-              "type": "float"
-            }
-          ],
-          "entries": [
-            {
-              "objID": "4209da13-33b2-4921-ded9-1e5dbc9d7d1f",
-              "variable": "measured_psu_voltage",
-              "value": "measured_psu_voltage"
-            },
-            {
-              "objID": "a23c5129-25ab-4ed9-c963-76243feb5684",
-              "variable": "measured_psu_current",
-              "value": "measured_psu_current"
-            },
-            {
-              "objID": "1f69417e-9b01-42f7-fc1c-0ecc8bd2ac52",
-              "variable": "measured_psu_power",
-              "value": "measured_psu_power"
-            }
-          ]
-        },
-        {
-          "objID": "c3c6b880-49c2-4f91-ec13-21a66371270a",
-          "type": "SwitchActionComponent",
-          "left": -878,
-          "top": 327,
-          "width": 279,
-          "height": 73,
-          "customInputs": [
-            {
-              "objID": "60c17f18-a8d2-4f72-d9c0-0b6c5a64965e",
+              "objID": "5a64e89d-d333-46ca-c4f4-dab9f2d65ce1",
               "name": "power",
               "type": "float"
             }
           ],
           "customOutputs": [],
-          "tests": [
+          "entries": [
             {
-              "objID": "aaa47e6e-a436-4165-bc6b-6171aefacba5",
-              "condition": "psu_parallel == false",
-              "outputName": "no_parallel",
-              "outputValue": "power"
+              "objID": "f3be4b89-7a24-443b-fb63-55bc93a5a8b6",
+              "variable": "measured_psu_voltage",
+              "value": "Flow.parseFloat(String.substring(voltage, 0, String.length(voltage)-1))"
             },
             {
-              "objID": "21028d9b-7442-4dd7-b08a-95881fcb9e0d",
-              "condition": "psu_parallel == true",
-              "outputName": "parallel",
-              "outputValue": ""
+              "objID": "c88674ad-b61c-4f2c-f4c2-5713a512b472",
+              "variable": "measured_psu_current",
+              "value": "Flow.parseFloat(String.substring(current, 0, String.length(current)-1))"
+            },
+            {
+              "objID": "408e4bc2-d03d-4b58-9c78-405f927187f0",
+              "variable": "measured_psu_power",
+              "value": "psu_parallel ? power * 2 : power"
             }
           ]
         },
         {
-          "objID": "4b16e078-fd14-4919-c2d1-e47f5d5d89cd",
+          "objID": "ed25282a-38de-4f76-e598-0f47ec86ba10",
           "type": "EvalExprActionComponent",
-          "left": -625,
-          "top": 229,
-          "width": 245,
+          "left": -557,
+          "top": 238,
+          "width": 182,
           "height": 54,
-          "customInputs": [
-            {
-              "objID": "1a525908-7d0c-4d78-c661-3a3b2e276733",
-              "name": "parallel_power",
-              "type": "float"
-            }
-          ],
-          "customOutputs": [],
-          "expression": "parallel_power*2"
-        },
-        {
-          "objID": "29a32ab4-bd03-443f-a9e1-8db67067a06c",
-          "type": "SwitchActionComponent",
-          "left": 1090,
-          "top": 454,
-          "width": 188,
-          "height": 111,
           "customInputs": [],
           "customOutputs": [],
-          "tests": [
+          "expression": "measured_psu_voltage"
+        },
+        {
+          "objID": "e4125b81-f21f-483e-ed86-bf97792fcbd9",
+          "type": "EvalExprActionComponent",
+          "left": -554,
+          "top": 321,
+          "width": 182,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "measured_psu_current"
+        },
+        {
+          "objID": "ac71c150-eb2d-4ac2-b961-8c54dffb2951",
+          "type": "EvalExprActionComponent",
+          "left": -557,
+          "top": 403,
+          "width": 169,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "expression": "measured_psu_power"
+        },
+        {
+          "objID": "f9f81ac6-673b-4021-db22-3da93f43c665",
+          "type": "LabelInActionComponent",
+          "left": -2397,
+          "top": 413,
+          "width": 87,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "label": "Start"
+        },
+        {
+          "objID": "a05f6134-c23d-4e66-d799-e241d2ab831c",
+          "type": "SetVariableActionComponent",
+          "left": 876,
+          "top": 545,
+          "width": 140,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
             {
-              "objID": "7b6f2fe1-3cc7-47fc-b888-5d03d3d1e0d8",
-              "condition": "load_mode == 0",
-              "outputName": "current",
-              "outputValue": ""
-            },
-            {
-              "objID": "59703e44-c94d-4847-f073-2835b7a146ee",
-              "condition": "load_mode == 1",
-              "outputName": "resistance",
-              "outputValue": ""
-            },
-            {
-              "objID": "07083b87-f44d-43dd-8c7b-d1e18a22a19c",
-              "condition": "load_mode == 2",
-              "outputName": "voltage"
-            },
-            {
-              "objID": "25de3296-1948-40d4-f511-0b2b1880364c",
-              "condition": "load_mode == 3",
-              "outputName": "power"
+              "objID": "9f226f77-49ef-4471-ffa5-d3c2cfca2147",
+              "variable": "continue",
+              "value": "true"
             }
           ]
         },
         {
-          "objID": "ce226272-c5d7-4bba-e39c-f84ef0b76520",
-          "type": "SwitchActionComponent",
-          "left": -401,
-          "top": 578,
-          "width": 188,
-          "height": 111,
+          "objID": "2495f3df-2c30-4acc-c095-709f13ad6a55",
+          "type": "LabelOutActionComponent",
+          "left": 1052,
+          "top": 545,
+          "width": 87,
+          "height": 24,
           "customInputs": [],
           "customOutputs": [],
-          "tests": [
-            {
-              "objID": "613cfd03-c6c5-489e-f6f8-20ac8090c42e",
-              "condition": "load_mode == 0",
-              "outputName": "current",
-              "outputValue": ""
-            },
-            {
-              "objID": "b95ed725-858f-4246-a176-d1b0a2e79f13",
-              "condition": "load_mode == 1",
-              "outputName": "resistance",
-              "outputValue": ""
-            },
-            {
-              "objID": "02a206ca-c2ee-4bb1-8337-dbc8d0b2e8ff",
-              "condition": "load_mode == 2",
-              "outputName": "voltage"
-            },
-            {
-              "objID": "d9373e14-04e4-421c-a9a9-56c176116745",
-              "condition": "load_mode == 3",
-              "outputName": "power"
-            }
-          ]
-        },
-        {
-          "objID": "1d21342e-3161-4684-a969-6900abd853cc",
-          "type": "IsTrueActionComponent",
-          "left": -878,
-          "top": 239,
-          "width": 200,
-          "height": 88,
-          "customInputs": [
-            {
-              "objID": "662ab651-7512-4537-b3eb-6fd172a64b45",
-              "name": "value",
-              "type": "any"
-            }
-          ],
-          "customOutputs": [
-            {
-              "objID": "849560b6-4ab4-42e7-c567-ff3d419f637b",
-              "name": "no_parallel",
-              "type": "float"
-            }
-          ],
-          "value": "psu_parallel"
+          "label": "Start"
         }
       ],
       "connectionLines": [
@@ -3449,7 +3326,7 @@
           "objID": "4fbe77c8-a48b-4300-a945-fee2605645f8",
           "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
           "output": "voltage",
-          "target": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
+          "target": "dff9fbf9-b694-4035-8109-d80760ebd487",
           "input": "voltage"
         },
         {
@@ -3488,17 +3365,10 @@
           "input": "@seqin"
         },
         {
-          "objID": "11c49dc1-bcd8-4307-f5ac-5331444d01b0",
-          "source": "50cd8401-f7e4-4fc0-87d9-caaacf6abab3",
-          "output": "@seqout",
-          "target": "45969a43-df73-492d-f9e6-ee2da52abbf8",
-          "input": "@seqin"
-        },
-        {
           "objID": "18d55e7b-f56d-44a8-f485-5eba81396af6",
           "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
           "output": "current",
-          "target": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
+          "target": "dff9fbf9-b694-4035-8109-d80760ebd487",
           "input": "current"
         },
         {
@@ -3509,18 +3379,18 @@
           "input": "@seqin"
         },
         {
-          "objID": "8604e51b-901c-470e-c1b3-91a9200e08a4",
-          "source": "930d31f7-b0c6-48a1-a77e-758a13abc33a",
-          "output": "CLICKED",
-          "target": "50cd8401-f7e4-4fc0-87d9-caaacf6abab3",
-          "input": "@seqin"
-        },
-        {
           "objID": "4f020efd-5d41-42c7-879e-206c533fdbda",
           "source": "f4a18c17-e717-4fde-e305-68031fce27aa",
           "output": "@seqout",
           "target": "4a02a52d-17c6-4884-ae7c-257e8d34a070",
           "input": "@seqin"
+        },
+        {
+          "objID": "e1ffaa4c-16e2-4358-fe4a-48bad8fae6dc",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "power",
+          "target": "66299894-62f7-43e8-c180-f24ecafd2944",
+          "input": "data"
         },
         {
           "objID": "e39570c5-ff5a-4d6c-b057-8e73b1c51a1c",
@@ -3535,6 +3405,13 @@
           "output": "@seqout",
           "target": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
           "input": "@seqin"
+        },
+        {
+          "objID": "00c290a8-b46a-4016-ae50-9db41ba6344b",
+          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "output": "power",
+          "target": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
+          "input": "PSU_POW"
         },
         {
           "objID": "fff3ce27-e9f9-4c7e-d65d-0cdb8b7f3a4a",
@@ -3621,109 +3498,109 @@
           "input": "@seqin"
         },
         {
-          "objID": "2ee9ea3b-7965-4b16-f7cc-b54d500aa2aa",
-          "source": "4b6f4bb6-a4ba-4bc7-956b-8a738171872c",
-          "output": "result",
-          "target": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "input": "measured_psu_current"
-        },
-        {
-          "objID": "9c715d66-cd63-459e-a690-1040b10a296a",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
+          "objID": "ab8eebed-3183-46f3-b383-5472952ae159",
+          "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
           "output": "@seqout",
-          "target": "c03c83e5-e518-4166-e413-0659dc702c74",
+          "target": "dff9fbf9-b694-4035-8109-d80760ebd487",
           "input": "@seqin"
         },
         {
+          "objID": "3bb3abca-f705-4153-9cee-bc430766842a",
+          "source": "ac71c150-eb2d-4ac2-b961-8c54dffb2951",
+          "output": "result",
+          "target": "52698358-1f4c-45e6-b1b8-d1ab6d2d7b46",
+          "input": "data"
+        },
+        {
+          "objID": "3ec92edd-d8fa-443b-95a4-385413795de7",
+          "source": "ac71c150-eb2d-4ac2-b961-8c54dffb2951",
+          "output": "result",
+          "target": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
+          "input": "LOAD_POW"
+        },
+        {
           "objID": "4cef6ba4-b2f5-4f97-e3a5-9d029e8fc1c0",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "output": "measured_psu_voltage",
+          "source": "ed25282a-38de-4f76-e598-0f47ec86ba10",
+          "output": "result",
           "target": "1df6dda0-52b8-4f04-9403-7e75b9588e94",
           "input": "data"
         },
         {
           "objID": "fa3d24dd-18c5-45e8-d7aa-910bf2998ff1",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "output": "measured_psu_voltage",
+          "source": "ed25282a-38de-4f76-e598-0f47ec86ba10",
+          "output": "result",
           "target": "c38749f3-127c-4738-dabd-8c7a2ac61b0b",
           "input": "value"
         },
         {
           "objID": "622c4fc4-437c-411a-d31d-3a7719782371",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "output": "measured_psu_current",
+          "source": "e4125b81-f21f-483e-ed86-bf97792fcbd9",
+          "output": "result",
           "target": "0b2d3892-f6b4-485c-f27e-fc6d544bead9",
           "input": "data"
         },
         {
           "objID": "098a7f39-2af5-4ba9-ffcf-d1b46c0c70c7",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "output": "measured_psu_current",
+          "source": "e4125b81-f21f-483e-ed86-bf97792fcbd9",
+          "output": "result",
           "target": "7ae58b0d-3b34-47f6-c471-80ea31cd24b2",
           "input": "value"
         },
         {
-          "objID": "f0eab250-f08f-49c5-d865-2a29acb82ddd",
-          "source": "8bb73d08-69cf-4e84-e39b-82b650baaaec",
-          "output": "result",
-          "target": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "input": "measured_psu_voltage"
+          "objID": "e63009a5-dad8-4f51-b9ba-18abbd43503f",
+          "source": "ed25282a-38de-4f76-e598-0f47ec86ba10",
+          "output": "@seqout",
+          "target": "e4125b81-f21f-483e-ed86-bf97792fcbd9",
+          "input": "@seqin"
         },
         {
-          "objID": "5b067608-9d65-4ed7-c1ff-fe00cd71779b",
-          "source": "4b16e078-fd14-4919-c2d1-e47f5d5d89cd",
-          "output": "result",
-          "target": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "input": "measured_psu_power"
+          "objID": "de2becdc-5e39-4382-8f62-b314011fe503",
+          "source": "e4125b81-f21f-483e-ed86-bf97792fcbd9",
+          "output": "@seqout",
+          "target": "ac71c150-eb2d-4ac2-b961-8c54dffb2951",
+          "input": "@seqin"
         },
         {
-          "objID": "4e097ba6-c265-4769-e002-95e476bd387a",
+          "objID": "d96da8d4-3a98-4c66-c26c-a5692ee51799",
           "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
           "output": "power",
-          "target": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
-          "input": "LOAD_POW"
+          "target": "dff9fbf9-b694-4035-8109-d80760ebd487",
+          "input": "power"
         },
         {
-          "objID": "ab5770a7-c195-4626-b219-34939c055733",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "output": "measured_psu_power",
-          "target": "8b9838c0-ed7d-4ce3-bdf1-509c292e1beb",
-          "input": "PSU_POW"
+          "objID": "709d4c7c-7b47-45c6-d882-6d8dd1f413a0",
+          "source": "f9f81ac6-673b-4021-db22-3da93f43c665",
+          "output": "@seqout",
+          "target": "45969a43-df73-492d-f9e6-ee2da52abbf8",
+          "input": "@seqin"
         },
         {
-          "objID": "1cbd98ad-eb6e-4025-efbc-cc15c007dbbf",
-          "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
-          "output": "power",
-          "target": "52698358-1f4c-45e6-b1b8-d1ab6d2d7b46",
-          "input": "data"
+          "objID": "9d5488d2-2c43-42a7-e4a7-3a0d8b53750c",
+          "source": "930d31f7-b0c6-48a1-a77e-758a13abc33a",
+          "output": "CLICKED",
+          "target": "a05f6134-c23d-4e66-d799-e241d2ab831c",
+          "input": "@seqin"
         },
         {
-          "objID": "958d04a8-1fa9-4c38-8369-e9542a517a5d",
-          "source": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "output": "measured_psu_power",
-          "target": "66299894-62f7-43e8-c180-f24ecafd2944",
-          "input": "data"
+          "objID": "9cdb7dad-9bd7-4f18-e780-28a2954ac3f7",
+          "source": "a05f6134-c23d-4e66-d799-e241d2ab831c",
+          "output": "@seqout",
+          "target": "2495f3df-2c30-4acc-c095-709f13ad6a55",
+          "input": "@seqin"
         },
         {
-          "objID": "4ab6d52a-7148-4119-b51d-009288465b60",
-          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
-          "output": "power",
-          "target": "1d21342e-3161-4684-a969-6900abd853cc",
-          "input": "value"
+          "objID": "8154bebb-eafc-454a-8938-30f39bfbacb2",
+          "source": "dff9fbf9-b694-4035-8109-d80760ebd487",
+          "output": "@seqout",
+          "target": "ed25282a-38de-4f76-e598-0f47ec86ba10",
+          "input": "@seqin"
         },
         {
-          "objID": "7c225f06-6e7d-40b5-bdff-2eaee6151c74",
-          "source": "1d21342e-3161-4684-a969-6900abd853cc",
-          "output": "no_parallel",
-          "target": "5b4a5bc1-348d-439c-b8d7-17e1e1f52002",
-          "input": "measured_psu_power"
-        },
-        {
-          "objID": "90a11d03-0ae8-443c-9dfa-7965050cc528",
-          "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
-          "output": "power",
-          "target": "4b16e078-fd14-4919-c2d1-e47f5d5d89cd",
-          "input": "parallel_power"
+          "objID": "eb1f7013-47da-4f41-fce1-5d0f74a00ba8",
+          "source": "ac71c150-eb2d-4ac2-b961-8c54dffb2951",
+          "output": "@seqout",
+          "target": "c03c83e5-e518-4166-e413-0659dc702c74",
+          "input": "@seqin"
         }
       ],
       "localVariables": [
