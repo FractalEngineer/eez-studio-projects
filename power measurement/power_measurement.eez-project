@@ -110,7 +110,7 @@
         "objID": "d4f6c62b-6adb-458a-f569-4f02ac81632d",
         "name": "current_max",
         "type": "struct:NumberInput",
-        "defaultValue": "{\n  label: \"Max Current\",\n  value: 3,\n  unit: \"A\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 3\n}",
+        "defaultValue": "{\n  label: \"Max Current\",\n  value: 6,\n  unit: \"A\",\n  text: \"\",\n  error: \"\",\n  MIN: 0,\n  MAX: 3\n}",
         "persistent": false
       },
       {
@@ -174,7 +174,7 @@
         "objID": "fb4554ee-7ad8-4980-8995-fcf8316198c6",
         "name": "PROFILE_VALUES",
         "type": "array:struct:Profile",
-        "defaultValue": "[\n {\n   psu_test_channel: 0,\n   psu_serial: false,\n   psu_parallel: true,\n   volt_start: 4.35,\n   volt_end: 2,\n   volt_step: 0.01,\n   step_delay: 3,\n   current_max: 6,\n   psu_aux_channel: 2,\n   aux_voltage: 12,\n   load_mode: 0,\n   load_value: 1,\n   load_on: 4.8,\n   load_off: 2,\n   log_rate: 500,\n },\n {\n   volt_start: 1.1,\n   volt_end: 2.1,\n   volt_step: 0.01,\n   step_delay: 5\n },\n]",
+        "defaultValue": "[\n {\n   psu_test_channel: 0,\n   psu_serial: false,\n   psu_parallel: true,\n   volt_start: 4.36,\n   volt_end: 1.8,\n   volt_step: 0.01,\n   step_delay: 3,\n   current_max: 6,\n   psu_aux_channel: 2,\n   aux_voltage: 12,\n   load_mode: 0,\n   load_value: 1.2,\n   load_on: 4.8,\n   load_off: 2,\n   log_rate: 500,\n },\n {\n   volt_start: 1.1,\n   volt_end: 2.1,\n   volt_step: 0.01,\n   step_delay: 5\n },\n]",
         "persistent": false,
         "native": false
       },
@@ -2207,10 +2207,24 @@
           "eventHandlers": []
         },
         {
-          "objID": "93f178db-3667-489c-9566-47f727d6ceb5",
+          "objID": "fc3a2849-f272-4125-e1c0-78a1843b05c4",
+          "type": "SCPIActionComponent",
+          "left": 1090,
+          "top": 573,
+          "width": 97,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "SENS ON",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "7e5c57a9-ae23-4982-b0db-e1ff7b221edc",
           "type": "SCPIActionComponent",
           "left": 1081,
-          "top": 104,
+          "top": 107,
           "width": 225,
           "height": 67,
           "customInputs": [],
@@ -2218,7 +2232,7 @@
           "instrument": "PSU",
           "scpi": "PARA {psu_parallel ? \"ON\" : \"OFF\"}\nSER {psu_serial ? \"ON\" : \"OFF\"}",
           "timeout": "null",
-          "delay": "null"
+          "delay": "200"
         }
       ],
       "connectionLines": [
@@ -2405,10 +2419,17 @@
           "input": "@seqin"
         },
         {
-          "objID": "2cfe37c7-8565-40ea-d68a-7e7243f7fb95",
+          "objID": "e6bbeed8-c9a5-4eaa-9cff-296712d99b55",
           "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
           "output": "CLICKED",
-          "target": "93f178db-3667-489c-9566-47f727d6ceb5",
+          "target": "fc3a2849-f272-4125-e1c0-78a1843b05c4",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e353ef77-746c-45e1-c567-2133f5dfbbbe",
+          "source": "3b0dbd3f-1421-4de9-9774-ecb537c2b773",
+          "output": "CLICKED",
+          "target": "7e5c57a9-ae23-4982-b0db-e1ff7b221edc",
           "input": "@seqin"
         }
       ],
@@ -2906,7 +2927,7 @@
           "instrument": "PSU",
           "scpi": "psu_voltage = MEAS:VOLT{psu_test_channel+1}?\npsu_current = MEAS:CURR{psu_test_channel+1}?\npsu_power = MEAS:POW{psu_test_channel+1}?",
           "timeout": "null",
-          "delay": "null"
+          "delay": "50"
         },
         {
           "objID": "6a239a29-cde9-43f5-d5eb-9f368fb3d343",
@@ -2948,20 +2969,6 @@
           "milliseconds": "log_rate.value"
         },
         {
-          "objID": "45969a43-df73-492d-f9e6-ee2da52abbf8",
-          "type": "SCPIActionComponent",
-          "left": -2265,
-          "top": 413,
-          "width": 170,
-          "height": 67,
-          "customInputs": [],
-          "customOutputs": [],
-          "instrument": "PSU",
-          "scpi": "OUT{psu_test_channel+1} 1\nOUT{psu_aux_channel+1} 1",
-          "timeout": "null",
-          "delay": "null"
-        },
-        {
           "objID": "4a02a52d-17c6-4884-ae7c-257e8d34a070",
           "type": "SCPIActionComponent",
           "left": 1150,
@@ -2976,24 +2983,10 @@
           "delay": "null"
         },
         {
-          "objID": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
-          "type": "SCPIActionComponent",
-          "left": -2051,
-          "top": 413,
-          "width": 97,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "instrument": "LOAD",
-          "scpi": "LOAD ON",
-          "timeout": "null",
-          "delay": "null"
-        },
-        {
           "objID": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
           "type": "SCPIActionComponent",
-          "left": -1726,
-          "top": 18,
+          "left": -1754,
+          "top": 11,
           "width": 248,
           "height": 88,
           "customInputs": [],
@@ -3017,7 +3010,7 @@
           "instrument": "LOAD",
           "scpi": "load_voltage = MEAS:VOLT?\nload_current = MEAS:CURR?\nload_power = MEAS:POW?",
           "timeout": "null",
-          "delay": "null"
+          "delay": "50"
         },
         {
           "objID": "a55673c4-3b9a-42f6-d4e9-4483137bbb15",
@@ -3394,7 +3387,7 @@
           "instrument": "SCOPE",
           "scpi": "scope_vpp = :MEAS:VPP? CHAN1\nscope_vrms = :MEAS:VRMS? CHAN1\nscope_freq = :MEAS:FREQ? CHAN1",
           "timeout": "null",
-          "delay": "null"
+          "delay": "50"
         },
         {
           "objID": "099da428-2697-4c38-9965-e6ef55bb2c3c",
@@ -3434,11 +3427,11 @@
           "type": "DelayActionComponent",
           "left": -1736,
           "top": 610,
-          "width": 163,
+          "width": 176,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "milliseconds": "step_delay.value*1000"
+          "milliseconds": "step_delay.value*2*1000"
         },
         {
           "objID": "3a876f1b-965b-45c9-81e1-d02386d89b54",
@@ -3458,6 +3451,56 @@
           "filePath": "file_path",
           "content": "\"test voltage\" + \",\" + \"psu_voltage\" + \",\" + \"psu_current\" + \",\" + \"psu_power\" + \",\" + \"load_voltage\" + \",\" + \"load_current\" + \",\" + \"load_power\" + \",\" + \"scope_vpp\" + \",\" + \"scope_vrms\" + \",\" + \"scope_freq\" + \"\\n\"",
           "encoding": "\"utf-8\""
+        },
+        {
+          "objID": "c5a602cb-2049-4ccf-8f02-9cc592de447d",
+          "type": "SCPIActionComponent",
+          "left": -2264,
+          "top": 413,
+          "width": 97,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LOAD ON",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "936b51a0-e635-4e21-ff6e-7046054bd94a",
+          "type": "DelayActionComponent",
+          "left": -2126,
+          "top": 518,
+          "width": 87,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "500"
+        },
+        {
+          "objID": "7f26ff1b-bb0f-4fa9-aabc-f2ea53616a18",
+          "type": "SCPIActionComponent",
+          "left": -2337,
+          "top": 511,
+          "width": 170,
+          "height": 67,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "OUT{psu_test_channel+1} 1\nOUT{psu_aux_channel+1} 1",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "3b92b9f5-0639-407d-8228-cbde1d204d14",
+          "type": "DelayActionComponent",
+          "left": -2141,
+          "top": 418,
+          "width": 87,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "500"
         }
       ],
       "connectionLines": [
@@ -3480,13 +3523,6 @@
           "source": "bb735789-4dfb-4633-bb87-286d90a4742a",
           "output": "CLICKED",
           "target": "f4a18c17-e717-4fde-e305-68031fce27aa",
-          "input": "@seqin"
-        },
-        {
-          "objID": "7ae05545-2ea3-4145-f463-693b907c30cf",
-          "source": "45969a43-df73-492d-f9e6-ee2da52abbf8",
-          "output": "@seqout",
-          "target": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
           "input": "@seqin"
         },
         {
@@ -3514,13 +3550,6 @@
           "objID": "0922cd2d-f9ca-4edb-95f7-79ac43310f80",
           "source": "bbd405c5-1257-43ac-b64e-852e82716cbe",
           "output": "@error",
-          "target": "bbd405c5-1257-43ac-b64e-852e82716cbe",
-          "input": "@seqin"
-        },
-        {
-          "objID": "e39570c5-ff5a-4d6c-b057-8e73b1c51a1c",
-          "source": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
-          "output": "@seqout",
           "target": "bbd405c5-1257-43ac-b64e-852e82716cbe",
           "input": "@seqin"
         },
@@ -3630,13 +3659,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "709d4c7c-7b47-45c6-d882-6d8dd1f413a0",
-          "source": "f9f81ac6-673b-4021-db22-3da93f43c665",
-          "output": "@seqout",
-          "target": "45969a43-df73-492d-f9e6-ee2da52abbf8",
-          "input": "@seqin"
-        },
-        {
           "objID": "9d5488d2-2c43-42a7-e4a7-3a0d8b53750c",
           "source": "930d31f7-b0c6-48a1-a77e-758a13abc33a",
           "output": "CLICKED",
@@ -3721,13 +3743,6 @@
           "input": "load_power"
         },
         {
-          "objID": "dd4f0f55-c039-41c1-f35a-33ed6bd0dfc7",
-          "source": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
-          "output": "@seqout",
-          "target": "8f7656c0-2d4e-42e6-b00c-2f2d71f29d2f",
-          "input": "@seqin"
-        },
-        {
           "objID": "325dbee0-70a0-4290-e223-e1d44acd19e1",
           "source": "20e5fbb4-fbf2-403f-f89a-192cedfa5ba9",
           "output": "@seqout",
@@ -3791,20 +3806,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "21ccbe13-88ef-4fe9-dca3-ef8d86177c6d",
-          "source": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
-          "output": "@seqout",
-          "target": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
-          "input": "@seqin"
-        },
-        {
-          "objID": "97ac11db-02be-4ae8-cca5-f3500c272a41",
-          "source": "eb4bb1b8-6a1b-4a88-ec51-00bb111e1981",
-          "output": "@seqout",
-          "target": "e70c4891-c2a7-4c8b-9c7d-13250ce076d9",
-          "input": "@seqin"
-        },
-        {
           "objID": "3157f39c-c2bf-473e-bd84-12a6625c5763",
           "source": "e70c4891-c2a7-4c8b-9c7d-13250ce076d9",
           "output": "@seqout",
@@ -3838,6 +3839,62 @@
           "output": "file_path",
           "target": "3a876f1b-965b-45c9-81e1-d02386d89b54",
           "input": "file_path"
+        },
+        {
+          "objID": "3e713a3f-36e0-4184-abed-20feeef571b8",
+          "source": "f9f81ac6-673b-4021-db22-3da93f43c665",
+          "output": "@seqout",
+          "target": "c5a602cb-2049-4ccf-8f02-9cc592de447d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "ddfaef7e-74bb-4b97-b6cc-a8da7993e183",
+          "source": "936b51a0-e635-4e21-ff6e-7046054bd94a",
+          "output": "@seqout",
+          "target": "bbd405c5-1257-43ac-b64e-852e82716cbe",
+          "input": "@seqin"
+        },
+        {
+          "objID": "3a197b9f-18c7-46bc-e42a-71c2555d451e",
+          "source": "936b51a0-e635-4e21-ff6e-7046054bd94a",
+          "output": "@seqout",
+          "target": "8f7656c0-2d4e-42e6-b00c-2f2d71f29d2f",
+          "input": "@seqin"
+        },
+        {
+          "objID": "40b96bc1-b8b0-4805-c6a9-482957a4ffc1",
+          "source": "936b51a0-e635-4e21-ff6e-7046054bd94a",
+          "output": "@seqout",
+          "target": "e70c4891-c2a7-4c8b-9c7d-13250ce076d9",
+          "input": "@seqin"
+        },
+        {
+          "objID": "bd82f263-b5a6-4a5c-ab31-a892080f629f",
+          "source": "936b51a0-e635-4e21-ff6e-7046054bd94a",
+          "output": "@seqout",
+          "target": "d9a7437b-1998-4ac3-da37-e2427287ebb3",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f126bfff-aacd-4dd0-b766-d7ccf453f522",
+          "source": "7f26ff1b-bb0f-4fa9-aabc-f2ea53616a18",
+          "output": "@seqout",
+          "target": "936b51a0-e635-4e21-ff6e-7046054bd94a",
+          "input": "@seqin"
+        },
+        {
+          "objID": "206f15c1-f547-4236-bbc1-897cef207eec",
+          "source": "c5a602cb-2049-4ccf-8f02-9cc592de447d",
+          "output": "@seqout",
+          "target": "3b92b9f5-0639-407d-8228-cbde1d204d14",
+          "input": "@seqin"
+        },
+        {
+          "objID": "27975ccb-d407-454a-f421-b0d983d99981",
+          "source": "3b92b9f5-0639-407d-8228-cbde1d204d14",
+          "output": "@seqout",
+          "target": "7f26ff1b-bb0f-4fa9-aabc-f2ea53616a18",
+          "input": "@seqin"
         }
       ],
       "localVariables": [
