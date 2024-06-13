@@ -6320,8 +6320,8 @@
         {
           "objID": "eafcbb71-0573-47f9-b51c-a41210752e4a",
           "type": "EvalExprActionComponent",
-          "left": -417,
-          "top": 57,
+          "left": -341,
+          "top": -60,
           "width": 182,
           "height": 54,
           "customInputs": [],
@@ -6331,8 +6331,8 @@
         {
           "objID": "c9164038-7236-4a87-980e-39d435cbbb76",
           "type": "EvalExprActionComponent",
-          "left": -417,
-          "top": 145,
+          "left": -341,
+          "top": 28,
           "width": 182,
           "height": 54,
           "customInputs": [],
@@ -6342,8 +6342,8 @@
         {
           "objID": "789ab7fe-bc5a-47d6-8c14-9646a6784603",
           "type": "EvalExprActionComponent",
-          "left": -417,
-          "top": 229,
+          "left": -341,
+          "top": 112,
           "width": 169,
           "height": 54,
           "customInputs": [],
@@ -6381,24 +6381,13 @@
         {
           "objID": "92d7e048-c787-4acc-b082-58df9894188c",
           "type": "LabelOutActionComponent",
-          "left": 1060,
-          "top": 640,
+          "left": 1303,
+          "top": 647,
           "width": 87,
           "height": 24,
           "customInputs": [],
           "customOutputs": [],
           "label": "Start"
-        },
-        {
-          "objID": "c7f51cae-342f-4a09-c935-acd33c387c2e",
-          "type": "IsTrueActionComponent",
-          "left": -1963,
-          "top": 381,
-          "width": 116,
-          "height": 70,
-          "customInputs": [],
-          "customOutputs": [],
-          "value": "log_results"
         },
         {
           "objID": "e8136412-39eb-45da-bed2-6576cc31150b",
@@ -6447,25 +6436,6 @@
           "customOutputs": [],
           "filePath": "file_path",
           "content": "sample + \",\" + test_params_arr[i].test_voltage + \",\" + measured_psu_voltage + \",\" + measured_psu_current + \",\" + measured_psu_power + \",\" + measured_load_voltage + \",\" + measured_load_current + \",\" + measured_load_power + \",\" + measured_scope_vpp + \",\" + measured_scope_vrms + \",\" + measured_scope_freq + \"\\n\"",
-          "encoding": "\"utf-8\""
-        },
-        {
-          "objID": "8dbe9ad4-2b8d-48e5-93bf-335592f31342",
-          "type": "FileWrite",
-          "left": -1776,
-          "top": 407,
-          "width": 129,
-          "height": 54,
-          "customInputs": [
-            {
-              "objID": "a05e6c91-686e-4bab-f09f-290086ff0452",
-              "name": "file_path",
-              "type": "string"
-            }
-          ],
-          "customOutputs": [],
-          "filePath": "file_path",
-          "content": "\"Sample\" + \",\" + \"test voltage\" + \",\" + \"psu_voltage\" + \",\" + \"psu_current\" + \",\" + \"psu_power\" + \",\" + \"load_voltage\" + \",\" + \"load_current\" + \",\" + \"load_power\" + \",\" + \"scope_vpp\" + \",\" + \"scope_vrms\" + \",\" + \"scope_freq\" + \"\\n\"",
           "encoding": "\"utf-8\""
         },
         {
@@ -6703,7 +6673,7 @@
           "type": "SetVariableActionComponent",
           "left": -1225,
           "top": 55,
-          "width": 320,
+          "width": 321,
           "height": 95,
           "customInputs": [
             {
@@ -6787,43 +6757,15 @@
           ]
         },
         {
-          "objID": "d18acda6-a799-4b7c-f0db-b2c28c3a63ad",
-          "type": "IsTrueActionComponent",
-          "left": -1937,
-          "top": -623,
-          "width": 87,
-          "height": 70,
-          "customInputs": [],
-          "customOutputs": [],
-          "value": "next"
-        },
-        {
-          "objID": "f3bd38f2-c18a-423c-9aae-fcf92b8a5261",
-          "type": "SetVariableActionComponent",
-          "left": -2107,
-          "top": -623,
-          "width": 122,
-          "height": 55,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "61c5454b-6fdd-473a-87db-94a1d83b0d82",
-              "variable": "next",
-              "value": "false"
-            }
-          ]
-        },
-        {
           "objID": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
           "type": "CounterActionComponent",
-          "left": -2150,
-          "top": -182,
+          "left": -2155,
+          "top": -87,
           "width": 87,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "countValue": "5"
+          "countValue": "4"
         },
         {
           "objID": "6de8a8d8-f95c-4256-9115-a2bddba48e7e",
@@ -6846,6 +6788,153 @@
           "customInputs": [],
           "customOutputs": [],
           "text": "<div><!--block-->Measuring loop: logs instrument queries in the log file for every command loop</div>"
+        },
+        {
+          "objID": "fa806934-6472-453b-9689-6e81c054404d",
+          "type": "DelayActionComponent",
+          "left": -2326,
+          "top": -70,
+          "width": 87,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "250"
+        },
+        {
+          "objID": "eb3322e6-85f9-47f5-903b-5aa4522d602d",
+          "type": "SCPIActionComponent",
+          "left": -1921,
+          "top": -517,
+          "width": 89,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "PSU",
+          "scpi": "OUT:ALL 0",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "9d3b796e-816f-4eba-febc-579e15f725cc",
+          "type": "SCPIActionComponent",
+          "left": -1921,
+          "top": -463,
+          "width": 97,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "instrument": "LOAD",
+          "scpi": "LOAD OFF",
+          "timeout": "null",
+          "delay": "null"
+        },
+        {
+          "objID": "38ee9d87-e5b0-474b-aae7-970b7e9f2849",
+          "type": "DelayActionComponent",
+          "left": -2047,
+          "top": -504,
+          "width": 87,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "milliseconds": "250"
+        },
+        {
+          "objID": "13df2569-d878-4771-e066-1e464b6d40f6",
+          "type": "SetVariableActionComponent",
+          "left": -1770,
+          "top": -477,
+          "width": 122,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "9484354c-75a8-439e-f4fe-40c413c0974c",
+              "variable": "next",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "objID": "9078d892-f131-463a-e5cb-1f6fb55abc50",
+          "type": "LabelOutActionComponent",
+          "left": 1216,
+          "top": 519,
+          "width": 87,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "label": "Next"
+        },
+        {
+          "objID": "c2f6665a-9a0a-48db-9285-eaabb1755853",
+          "type": "SetVariableActionComponent",
+          "left": -2018,
+          "top": -592,
+          "width": 99,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "9833e8a6-9e1f-4260-be7a-ef0435f838c9",
+              "variable": "i",
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "objID": "e2fef959-7670-4aec-f812-d05cca56023a",
+          "type": "IsTrueActionComponent",
+          "left": -1371,
+          "top": 250,
+          "width": 87,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "next"
+        },
+        {
+          "objID": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
+          "type": "IsTrueActionComponent",
+          "left": 957,
+          "top": 658,
+          "width": 116,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "log_results"
+        },
+        {
+          "objID": "68f26705-4275-4601-dbc2-cbf3801a2ca3",
+          "type": "FileWrite",
+          "left": 1131,
+          "top": 671,
+          "width": 129,
+          "height": 54,
+          "customInputs": [
+            {
+              "objID": "3d86ed91-2dc7-4a75-eaff-436eecc18eb1",
+              "name": "file_path",
+              "type": "string"
+            }
+          ],
+          "customOutputs": [],
+          "filePath": "file_path",
+          "content": "\"Sample\" + \",\" + \"test voltage\" + \",\" + \"psu_voltage\" + \",\" + \"psu_current\" + \",\" + \"psu_power\" + \",\" + \"load_voltage\" + \",\" + \"load_current\" + \",\" + \"load_power\" + \",\" + \"scope_vpp\" + \",\" + \"scope_vrms\" + \",\" + \"scope_freq\" + \"\\n\"",
+          "encoding": "\"utf-8\""
+        },
+        {
+          "objID": "4a03ee24-4523-48a8-95bc-1ec98ed19c31",
+          "type": "LabelInActionComponent",
+          "left": -2703,
+          "top": 276,
+          "width": 87,
+          "height": 24,
+          "customInputs": [],
+          "customOutputs": [],
+          "label": "Next"
         }
       ],
       "connectionLines": [
@@ -6955,13 +7044,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "b5627f45-c5b3-4978-ec57-8da035addf41",
-          "source": "789ab7fe-bc5a-47d6-8c14-9646a6784603",
-          "output": "@seqout",
-          "target": "1dd0ce63-5293-4fc1-bd5c-6ca65432a320",
-          "input": "@seqin"
-        },
-        {
           "objID": "0a1b0849-7ba8-435e-bf7b-f7d1f49b8c60",
           "source": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
           "output": "psu_power",
@@ -7053,20 +7135,6 @@
           "input": "file_path"
         },
         {
-          "objID": "1f770701-df5c-4b8d-c98e-586c95fe0a65",
-          "source": "c7f51cae-342f-4a09-c935-acd33c387c2e",
-          "output": "True",
-          "target": "8dbe9ad4-2b8d-48e5-93bf-335592f31342",
-          "input": "@seqin"
-        },
-        {
-          "objID": "656f69e5-bd00-4708-efe9-2ee98680ac1d",
-          "source": "6141e6c2-7519-4217-9a1c-68db085e88f9",
-          "output": "file_path",
-          "target": "8dbe9ad4-2b8d-48e5-93bf-335592f31342",
-          "input": "file_path"
-        },
-        {
           "objID": "ec400bb8-6fe9-4a5a-b547-7279b34555c2",
           "source": "b39a7496-ebbf-4e43-f479-e34dc18537dc",
           "output": "@seqout",
@@ -7078,13 +7146,6 @@
           "source": "96317214-7add-414f-98f9-6a09fa170537",
           "output": "@seqout",
           "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
-          "input": "@seqin"
-        },
-        {
-          "objID": "a3bd1c4d-c59a-4433-aae4-21da46d85132",
-          "source": "96317214-7add-414f-98f9-6a09fa170537",
-          "output": "@seqout",
-          "target": "c7f51cae-342f-4a09-c935-acd33c387c2e",
           "input": "@seqin"
         },
         {
@@ -7235,13 +7296,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "849c7697-4e7d-404e-d7e4-58cfc2ea1e05",
-          "source": "b0fbd457-01db-4720-a584-a541dac86059",
-          "output": "@seqout",
-          "target": "eafcbb71-0573-47f9-b51c-a41210752e4a",
-          "input": "@seqin"
-        },
-        {
           "objID": "e6d1ec9b-d19f-4b21-e56f-d83739f645ef",
           "source": "96317214-7add-414f-98f9-6a09fa170537",
           "output": "@seqout",
@@ -7263,39 +7317,11 @@
           "input": "@seqin"
         },
         {
-          "objID": "f09311f1-49d4-412e-c2ce-75fbfe6aea47",
-          "source": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
-          "output": "@seqout",
-          "target": "92d7e048-c787-4acc-b082-58df9894188c",
-          "input": "@seqin"
-        },
-        {
           "objID": "c3d938dd-c4d5-4cb2-f4be-c5255ec199a1",
           "source": "33f25607-54f7-47fd-f26c-dab8d2471540",
           "output": "@seqout",
           "target": "7f424e00-9b05-4c66-8cc2-6189dc5f23cc",
           "input": "@seqin"
-        },
-        {
-          "objID": "f874c455-8a89-4613-b5e1-84a89afafc10",
-          "source": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
-          "output": "done",
-          "target": "f3bd38f2-c18a-423c-9aae-fcf92b8a5261",
-          "input": "@seqin"
-        },
-        {
-          "objID": "4734004c-dfd9-453f-e646-7e4d4d0db8b6",
-          "source": "f3bd38f2-c18a-423c-9aae-fcf92b8a5261",
-          "output": "@seqout",
-          "target": "d18acda6-a799-4b7c-f0db-b2c28c3a63ad",
-          "input": "@seqin"
-        },
-        {
-          "objID": "fa15069b-a74c-4072-ccf4-cb59dcdd7424",
-          "source": "d18acda6-a799-4b7c-f0db-b2c28c3a63ad",
-          "output": "True",
-          "target": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
-          "input": "start"
         },
         {
           "objID": "7a1bec13-0c21-4a93-8e1d-db609f81991e",
@@ -7319,18 +7345,123 @@
           "input": "@seqin"
         },
         {
-          "objID": "6f35bea3-6958-4537-b107-9b2b69d9b5d5",
-          "source": "6018e97f-8a73-443d-c90b-2148d2ca4d06",
-          "output": "@seqout",
-          "target": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
-          "input": "@seqin"
-        },
-        {
           "objID": "5cf130b9-0de1-4b6f-d692-5ba3a483e120",
           "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
           "output": "done",
           "target": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
           "input": "next"
+        },
+        {
+          "objID": "dc2a99cf-54b8-4528-c8ec-7e4c90ba96d4",
+          "source": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
+          "output": "@seqout",
+          "target": "1dd0ce63-5293-4fc1-bd5c-6ca65432a320",
+          "input": "@seqin"
+        },
+        {
+          "objID": "990f5015-f29b-4c57-d03f-e401f0835962",
+          "source": "fa806934-6472-453b-9689-6e81c054404d",
+          "output": "@seqout",
+          "target": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6f993dd7-849e-46ea-f552-2e02bfb8d9f9",
+          "source": "38ee9d87-e5b0-474b-aae7-970b7e9f2849",
+          "output": "@seqout",
+          "target": "eb3322e6-85f9-47f5-903b-5aa4522d602d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "14a3a028-cc75-43d2-8824-9ae9fac0f993",
+          "source": "38ee9d87-e5b0-474b-aae7-970b7e9f2849",
+          "output": "@seqout",
+          "target": "9d3b796e-816f-4eba-febc-579e15f725cc",
+          "input": "@seqin"
+        },
+        {
+          "objID": "032a12c4-c063-44ca-a3ab-2afde640bbdd",
+          "source": "eb3322e6-85f9-47f5-903b-5aa4522d602d",
+          "output": "@seqout",
+          "target": "13df2569-d878-4771-e066-1e464b6d40f6",
+          "input": "@seqin"
+        },
+        {
+          "objID": "9e95a5cb-b7f4-49e2-a96c-255f5dbc7c96",
+          "source": "9d3b796e-816f-4eba-febc-579e15f725cc",
+          "output": "@seqout",
+          "target": "13df2569-d878-4771-e066-1e464b6d40f6",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c8005097-10a9-46c5-b9c1-1983f8248382",
+          "source": "7f424e00-9b05-4c66-8cc2-6189dc5f23cc",
+          "output": "@seqout",
+          "target": "9078d892-f131-463a-e5cb-1f6fb55abc50",
+          "input": "@seqin"
+        },
+        {
+          "objID": "cc40b975-3587-4bb9-a34e-d301236267a6",
+          "source": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
+          "output": "done",
+          "target": "c2f6665a-9a0a-48db-9285-eaabb1755853",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f1450ff9-2aaf-4008-8cc5-7b7616a718a2",
+          "source": "c2f6665a-9a0a-48db-9285-eaabb1755853",
+          "output": "@seqout",
+          "target": "38ee9d87-e5b0-474b-aae7-970b7e9f2849",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e8136848-e16f-4c30-c1d2-c31847559290",
+          "source": "e2fef959-7670-4aec-f812-d05cca56023a",
+          "output": "True",
+          "target": "fa806934-6472-453b-9689-6e81c054404d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f9a50012-8a4f-46d7-97e1-e320ba9f575e",
+          "source": "6018e97f-8a73-443d-c90b-2148d2ca4d06",
+          "output": "@seqout",
+          "target": "e2fef959-7670-4aec-f812-d05cca56023a",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c3d021f8-a23f-493a-fe56-0ab0f4645873",
+          "source": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
+          "output": "True",
+          "target": "68f26705-4275-4601-dbc2-cbf3801a2ca3",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f525d114-d584-45f5-e84f-fd6f47929262",
+          "source": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
+          "output": "@seqout",
+          "target": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "d3b6b7b8-b878-488d-cacf-1eb5ba0d4e66",
+          "source": "68f26705-4275-4601-dbc2-cbf3801a2ca3",
+          "output": "@seqout",
+          "target": "92d7e048-c787-4acc-b082-58df9894188c",
+          "input": "@seqin"
+        },
+        {
+          "objID": "1215f236-dd90-40a1-d50d-e43417c862c7",
+          "source": "4a03ee24-4523-48a8-95bc-1ec98ed19c31",
+          "output": "@seqout",
+          "target": "160b200a-404c-41db-dfff-466087694693",
+          "input": "@seqin"
+        },
+        {
+          "objID": "33e9aa35-b52c-4bcc-bf6f-b954425e7f09",
+          "source": "6141e6c2-7519-4217-9a1c-68db085e88f9",
+          "output": "file_path",
+          "target": "68f26705-4275-4601-dbc2-cbf3801a2ca3",
+          "input": "file_path"
         }
       ],
       "localVariables": [
