@@ -187,16 +187,8 @@
         "native": false
       },
       {
-        "objID": "51009bcb-77c0-476e-8bb4-516c1df0c2ba",
-        "name": "scope_pp",
-        "type": "boolean",
-        "defaultValue": "false",
-        "persistent": false,
-        "native": false
-      },
-      {
         "objID": "8b783c3f-cfe6-4480-98b5-f27ea1c7ad64",
-        "name": "scope_rms",
+        "name": "scope_ripple",
         "type": "boolean",
         "defaultValue": "false",
         "persistent": false,
@@ -327,6 +319,14 @@
         "name": "i",
         "type": "integer",
         "defaultValue": "0",
+        "persistent": false,
+        "native": false
+      },
+      {
+        "objID": "836685f7-7604-47b3-be81-cd63311c14c9",
+        "name": "sample",
+        "type": "integer",
+        "defaultValue": "1",
         "persistent": false,
         "native": false
       }
@@ -1395,48 +1395,6 @@
               "eventHandlers": []
             },
             {
-              "objID": "9215fbaa-cbf8-4cee-88be-fe9a2eb4af58",
-              "type": "CheckboxWidget",
-              "left": 272,
-              "top": 33,
-              "width": 115,
-              "height": 20,
-              "customInputs": [],
-              "customOutputs": [],
-              "data": "scope_pp",
-              "style": {
-                "objID": "fe4e9ea5-007b-4e6c-9210-6f8ebf550b84",
-                "useStyle": "default",
-                "conditionalStyles": [],
-                "childStyles": []
-              },
-              "hiddenInEditor": false,
-              "timeline": [],
-              "eventHandlers": [],
-              "label": "\"Log p-p ripple\""
-            },
-            {
-              "objID": "4c7d7ad3-c2e3-48f4-87cd-7d875aaf3507",
-              "type": "CheckboxWidget",
-              "left": 272,
-              "top": 52,
-              "width": 115,
-              "height": 20,
-              "customInputs": [],
-              "customOutputs": [],
-              "data": "scope_rms",
-              "style": {
-                "objID": "9c1150d2-2b7e-4e00-f907-5b2dd6975cc8",
-                "useStyle": "default",
-                "conditionalStyles": [],
-                "childStyles": []
-              },
-              "hiddenInEditor": false,
-              "timeline": [],
-              "eventHandlers": [],
-              "label": "\"Log RMS ripple\""
-            },
-            {
               "objID": "0d30ce52-cade-43c3-8729-c4b9f915e38a",
               "type": "TextDashboardWidget",
               "left": 542,
@@ -2266,7 +2224,7 @@
           "height": 25,
           "customInputs": [],
           "customOutputs": [],
-          "data": "\"Scope Ripple: P-P: \" + scope_pp + \" / RMS : \" + scope_rms",
+          "data": "\"Scope Ripple: \" + scope_ripple",
           "style": {
             "objID": "9d7d2d74-eb94-40d6-f6bb-37a562264936",
             "useStyle": "default",
@@ -2324,6 +2282,27 @@
           "scpi": "PARA {psu_parallel ? \"ON\" : \"OFF\"}\nSER {psu_serial ? \"ON\" : \"OFF\"}",
           "timeout": "null",
           "delay": "200"
+        },
+        {
+          "objID": "74f75ee9-73e3-4cae-c4b6-1d68dfeb49e2",
+          "type": "CheckboxWidget",
+          "left": 280,
+          "top": 363,
+          "width": 133,
+          "height": 19,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "scope_ripple",
+          "style": {
+            "objID": "619f672b-cd21-424c-9e7c-17641420ceb0",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          },
+          "hiddenInEditor": false,
+          "timeline": [],
+          "eventHandlers": [],
+          "label": "\"Log scope ripple\""
         }
       ],
       "connectionLines": [
@@ -4383,36 +4362,15 @@
               "eventHandlers": []
             },
             {
-              "objID": "c8ce9aa5-9bbc-417f-9d94-10cff013087f",
-              "type": "CheckboxWidget",
-              "left": 272,
-              "top": 33,
-              "width": 115,
-              "height": 20,
-              "customInputs": [],
-              "customOutputs": [],
-              "data": "scope_pp",
-              "style": {
-                "objID": "3daf6cfd-65c3-4b48-8a4d-45e721cd969a",
-                "useStyle": "default",
-                "conditionalStyles": [],
-                "childStyles": []
-              },
-              "hiddenInEditor": false,
-              "timeline": [],
-              "eventHandlers": [],
-              "label": "\"Log p-p ripple\""
-            },
-            {
               "objID": "d150ef47-fab8-4ed1-98e5-c91d3b63f762",
               "type": "CheckboxWidget",
-              "left": 272,
-              "top": 52,
-              "width": 115,
-              "height": 20,
+              "left": 271,
+              "top": 33,
+              "width": 133,
+              "height": 19,
               "customInputs": [],
               "customOutputs": [],
-              "data": "scope_rms",
+              "data": "scope_ripple",
               "style": {
                 "objID": "3c8f3778-7f2a-470e-e085-81c42c7b5a0f",
                 "useStyle": "default",
@@ -4422,7 +4380,7 @@
               "hiddenInEditor": false,
               "timeline": [],
               "eventHandlers": [],
-              "label": "\"Log RMS ripple\""
+              "label": "\"Log scope ripple\""
             },
             {
               "objID": "82313f1d-63d9-444b-d3ea-868706a5a688",
@@ -5210,7 +5168,7 @@
           "height": 25,
           "customInputs": [],
           "customOutputs": [],
-          "data": "\"Scope Ripple: P-P: \" + scope_pp + \" / RMS : \" + scope_rms",
+          "data": "\"Scope Ripple: \" + scope_ripple",
           "style": {
             "objID": "2896c3a5-e843-4182-d332-0eb1a406fb85",
             "useStyle": "default",
@@ -5708,8 +5666,8 @@
         {
           "objID": "e94815af-1ae2-4353-ec52-21dd72ff2024",
           "type": "ButtonDashboardWidget",
-          "left": 712,
-          "top": 532,
+          "left": 499,
+          "top": 528,
           "width": 80,
           "height": 60,
           "customInputs": [],
@@ -5741,8 +5699,8 @@
         {
           "objID": "6d340682-fb8e-4c77-c6fe-c2ee9bac6f5c",
           "type": "ButtonDashboardWidget",
-          "left": 602,
-          "top": 532,
+          "left": 385,
+          "top": 528,
           "width": 80,
           "height": 60,
           "customInputs": [],
@@ -5894,28 +5852,6 @@
             "conditionalStyles": [],
             "childStyles": []
           }
-        },
-        {
-          "objID": "a07a2c17-92e5-4a57-b7f5-fe6c234adebf",
-          "type": "ProgressDashboardWidget",
-          "left": 209,
-          "top": 552,
-          "width": 201,
-          "height": 20,
-          "customInputs": [],
-          "customOutputs": [],
-          "data": "volt_variable",
-          "style": {
-            "objID": "72620ca2-ccd5-4f07-8ed4-c589718671e6",
-            "useStyle": "default",
-            "conditionalStyles": [],
-            "childStyles": []
-          },
-          "timeline": [],
-          "eventHandlers": [],
-          "min": "volt_end",
-          "max": "volt_start",
-          "orientation": "horizontal"
         },
         {
           "objID": "dd456493-bd9d-4c48-8112-744c4ee243c7",
@@ -6113,8 +6049,8 @@
         {
           "objID": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
           "type": "SCPIActionComponent",
-          "left": -1736,
-          "top": -134,
+          "left": -1890,
+          "top": -206,
           "width": 362,
           "height": 106,
           "customInputs": [],
@@ -6142,21 +6078,10 @@
           "delay": "50"
         },
         {
-          "objID": "31fd2ed3-083e-42b6-f1cf-d79e53a0faa6",
-          "type": "IsTrueActionComponent",
-          "left": -1627,
-          "top": 340,
-          "width": 98,
-          "height": 70,
-          "customInputs": [],
-          "customOutputs": [],
-          "value": "continue"
-        },
-        {
           "objID": "3eb9052b-cd07-405a-f86e-2a29e4b90777",
           "type": "SetVariableActionComponent",
-          "left": 876,
-          "top": 706,
+          "left": 539,
+          "top": 781,
           "width": 146,
           "height": 55,
           "customInputs": [],
@@ -6170,21 +6095,10 @@
           ]
         },
         {
-          "objID": "7a45f7b4-54f1-4360-e9ec-32dbbcef30c1",
-          "type": "DelayActionComponent",
-          "left": -1796,
-          "top": 340,
-          "width": 120,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "milliseconds": "log_rate.value"
-        },
-        {
           "objID": "a418839e-f0b2-4489-d401-78058023e45e",
           "type": "SCPIActionComponent",
-          "left": 1150,
-          "top": 680,
+          "left": 813,
+          "top": 755,
           "width": 89,
           "height": 54,
           "customInputs": [],
@@ -6197,8 +6111,8 @@
         {
           "objID": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
           "type": "SCPIActionComponent",
-          "left": -1622,
-          "top": 0,
+          "left": -1771,
+          "top": -60,
           "width": 248,
           "height": 88,
           "customInputs": [],
@@ -6227,8 +6141,8 @@
         {
           "objID": "3b5e06b5-383d-41b7-dfa6-5aa1e574da8e",
           "type": "SCPIActionComponent",
-          "left": 1150,
-          "top": 734,
+          "left": 813,
+          "top": 809,
           "width": 97,
           "height": 54,
           "customInputs": [],
@@ -6241,8 +6155,8 @@
         {
           "objID": "6141e6c2-7519-4217-9a1c-68db085e88f9",
           "type": "FileSaveDialog",
-          "left": -633,
-          "top": 588,
+          "left": -635,
+          "top": 469,
           "width": 117,
           "height": 52,
           "customInputs": [],
@@ -6252,8 +6166,8 @@
         {
           "objID": "26816406-c316-480c-d1c4-8de9a15ae45e",
           "type": "ShowFileInFolder",
-          "left": 876,
-          "top": 805,
+          "left": 539,
+          "top": 880,
           "width": 132,
           "height": 52,
           "customInputs": [
@@ -6269,7 +6183,7 @@
         {
           "objID": "b9f10a5e-cdd6-469e-ae19-815505993018",
           "type": "ButtonDashboardWidget",
-          "left": 468,
+          "left": 191,
           "top": 562,
           "width": 92,
           "height": 30,
@@ -6302,7 +6216,7 @@
         {
           "objID": "4b7b729a-4868-4772-f9bd-96a7d3ba4736",
           "type": "CheckboxWidget",
-          "left": 468,
+          "left": 191,
           "top": 539,
           "width": 92,
           "height": 20,
@@ -6322,8 +6236,8 @@
         {
           "objID": "1dd0ce63-5293-4fc1-bd5c-6ca65432a320",
           "type": "IsTrueActionComponent",
-          "left": -628,
-          "top": 505,
+          "left": -630,
+          "top": 386,
           "width": 116,
           "height": 70,
           "customInputs": [],
@@ -6333,10 +6247,10 @@
         {
           "objID": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
           "type": "SetVariableActionComponent",
-          "left": -1064,
-          "top": -41,
+          "left": -1226,
+          "top": -155,
           "width": 754,
-          "height": 215,
+          "height": 155,
           "customInputs": [
             {
               "objID": "09266d74-d3a0-46cb-d7f9-f3f3cd0024a9",
@@ -6366,21 +6280,6 @@
             {
               "objID": "476c24e0-569b-4ddb-f030-1f7dbc16ff05",
               "name": "load_power",
-              "type": "float"
-            },
-            {
-              "objID": "6f93ac09-4621-4cb3-8e73-09cf7e82771b",
-              "name": "scope_vpp",
-              "type": "float"
-            },
-            {
-              "objID": "3578ed80-17ec-45c3-c2d0-f0c9e0ee5aa4",
-              "name": "scope_vrms",
-              "type": "float"
-            },
-            {
-              "objID": "5551f5a5-2128-499d-f314-b826b6d43e3a",
-              "name": "scope_freq",
               "type": "float"
             }
           ],
@@ -6415,29 +6314,14 @@
               "objID": "fd48a6cb-6a90-487a-f9a3-d447dc5fad9e",
               "variable": "measured_load_power",
               "value": "load_power"
-            },
-            {
-              "objID": "01bbc991-d073-48b4-b08f-5e676860a552",
-              "variable": "measured_scope_vpp",
-              "value": "scope_vpp"
-            },
-            {
-              "objID": "e86b35e6-64ff-4780-df0b-2c75263efec7",
-              "variable": "measured_scope_vrms",
-              "value": "scope_vrms"
-            },
-            {
-              "objID": "da2a035d-b545-4b3a-96c2-c6378720f2ff",
-              "variable": "measured_scope_freq",
-              "value": "scope_freq"
             }
           ]
         },
         {
           "objID": "eafcbb71-0573-47f9-b51c-a41210752e4a",
           "type": "EvalExprActionComponent",
-          "left": -554,
-          "top": 234,
+          "left": -417,
+          "top": 57,
           "width": 182,
           "height": 54,
           "customInputs": [],
@@ -6447,8 +6331,8 @@
         {
           "objID": "c9164038-7236-4a87-980e-39d435cbbb76",
           "type": "EvalExprActionComponent",
-          "left": -554,
-          "top": 321,
+          "left": -417,
+          "top": 145,
           "width": 182,
           "height": 54,
           "customInputs": [],
@@ -6458,8 +6342,8 @@
         {
           "objID": "789ab7fe-bc5a-47d6-8c14-9646a6784603",
           "type": "EvalExprActionComponent",
-          "left": -554,
-          "top": 398,
+          "left": -417,
+          "top": 229,
           "width": 169,
           "height": 54,
           "customInputs": [],
@@ -6469,8 +6353,8 @@
         {
           "objID": "b39a7496-ebbf-4e43-f479-e34dc18537dc",
           "type": "LabelInActionComponent",
-          "left": -2397,
-          "top": 413,
+          "left": -2660,
+          "top": 381,
           "width": 87,
           "height": 24,
           "customInputs": [],
@@ -6480,8 +6364,8 @@
         {
           "objID": "1719917a-d788-4837-c083-91648a303065",
           "type": "SetVariableActionComponent",
-          "left": 844,
-          "top": 550,
+          "left": 630,
+          "top": 643,
           "width": 140,
           "height": 55,
           "customInputs": [],
@@ -6497,8 +6381,8 @@
         {
           "objID": "92d7e048-c787-4acc-b082-58df9894188c",
           "type": "LabelOutActionComponent",
-          "left": 1020,
-          "top": 550,
+          "left": 1060,
+          "top": 640,
           "width": 87,
           "height": 24,
           "customInputs": [],
@@ -6508,8 +6392,8 @@
         {
           "objID": "c7f51cae-342f-4a09-c935-acd33c387c2e",
           "type": "IsTrueActionComponent",
-          "left": -1859,
-          "top": 437,
+          "left": -1963,
+          "top": 381,
           "width": 116,
           "height": 70,
           "customInputs": [],
@@ -6519,8 +6403,8 @@
         {
           "objID": "e8136412-39eb-45da-bed2-6576cc31150b",
           "type": "SCPIActionComponent",
-          "left": -1650,
-          "top": 124,
+          "left": -1798,
+          "top": 55,
           "width": 276,
           "height": 88,
           "customInputs": [],
@@ -6549,8 +6433,8 @@
         {
           "objID": "6018e97f-8a73-443d-c90b-2148d2ca4d06",
           "type": "FileAppend",
-          "left": -436,
-          "top": 559,
+          "left": -438,
+          "top": 440,
           "width": 129,
           "height": 54,
           "customInputs": [
@@ -6562,14 +6446,14 @@
           ],
           "customOutputs": [],
           "filePath": "file_path",
-          "content": "volt_variable + \",\" + measured_psu_voltage + \",\" + measured_psu_current + \",\" + measured_psu_power + \",\" + measured_load_voltage + \",\" + measured_load_current + \",\" + measured_load_power + \",\" + measured_scope_vpp + \",\" + measured_scope_vrms + \",\" + measured_scope_freq + \"\\n\"",
+          "content": "sample + \",\" + test_params_arr[i].test_voltage + \",\" + measured_psu_voltage + \",\" + measured_psu_current + \",\" + measured_psu_power + \",\" + measured_load_voltage + \",\" + measured_load_current + \",\" + measured_load_power + \",\" + measured_scope_vpp + \",\" + measured_scope_vrms + \",\" + measured_scope_freq + \"\\n\"",
           "encoding": "\"utf-8\""
         },
         {
           "objID": "8dbe9ad4-2b8d-48e5-93bf-335592f31342",
           "type": "FileWrite",
-          "left": -1676,
-          "top": 457,
+          "left": -1776,
+          "top": 407,
           "width": 129,
           "height": 54,
           "customInputs": [
@@ -6581,14 +6465,14 @@
           ],
           "customOutputs": [],
           "filePath": "file_path",
-          "content": "\"test voltage\" + \",\" + \"psu_voltage\" + \",\" + \"psu_current\" + \",\" + \"psu_power\" + \",\" + \"load_voltage\" + \",\" + \"load_current\" + \",\" + \"load_power\" + \",\" + \"scope_vpp\" + \",\" + \"scope_vrms\" + \",\" + \"scope_freq\" + \"\\n\"",
+          "content": "\"Sample\" + \",\" + \"test voltage\" + \",\" + \"psu_voltage\" + \",\" + \"psu_current\" + \",\" + \"psu_power\" + \",\" + \"load_voltage\" + \",\" + \"load_current\" + \",\" + \"load_power\" + \",\" + \"scope_vpp\" + \",\" + \"scope_vrms\" + \",\" + \"scope_freq\" + \"\\n\"",
           "encoding": "\"utf-8\""
         },
         {
           "objID": "160b200a-404c-41db-dfff-466087694693",
           "type": "SCPIActionComponent",
-          "left": -2264,
-          "top": 413,
+          "left": -2527,
+          "top": 381,
           "width": 97,
           "height": 54,
           "customInputs": [],
@@ -6601,19 +6485,19 @@
         {
           "objID": "96317214-7add-414f-98f9-6a09fa170537",
           "type": "DelayActionComponent",
-          "left": -2126,
-          "top": 518,
+          "left": -2389,
+          "top": 486,
           "width": 87,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "milliseconds": "500"
+          "milliseconds": "250"
         },
         {
           "objID": "98fe8311-0ea2-40b0-ff59-486ee162c511",
           "type": "SCPIActionComponent",
-          "left": -2337,
-          "top": 511,
+          "left": -2600,
+          "top": 479,
           "width": 170,
           "height": 67,
           "customInputs": [],
@@ -6626,19 +6510,19 @@
         {
           "objID": "04965d77-b9f9-40bd-8998-54955f488f2b",
           "type": "DelayActionComponent",
-          "left": -2141,
-          "top": 418,
+          "left": -2398,
+          "top": 386,
           "width": 87,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
-          "milliseconds": "500"
+          "milliseconds": "250"
         },
         {
           "objID": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
           "type": "LoopActionComponent",
-          "left": -1910,
-          "top": 761,
+          "left": -2097,
+          "top": -785,
           "width": 402,
           "height": 70,
           "customInputs": [],
@@ -6652,8 +6536,8 @@
         {
           "objID": "7946318e-f989-421c-9535-36e1558f2e5a",
           "type": "SCPIActionComponent",
-          "left": -1412,
-          "top": 761,
+          "left": -1599,
+          "top": -785,
           "width": 372,
           "height": 54,
           "customInputs": [],
@@ -6666,8 +6550,8 @@
         {
           "objID": "e7b9b6f0-20f4-4aeb-b906-8c8d78c46474",
           "type": "SwitchActionComponent",
-          "left": -1412,
-          "top": 870,
+          "left": -1599,
+          "top": -676,
           "width": 188,
           "height": 111,
           "customInputs": [],
@@ -6700,8 +6584,8 @@
         {
           "objID": "e33573c4-a72f-4e67-ed6d-24dd4fbdb910",
           "type": "SCPIActionComponent",
-          "left": -1170,
-          "top": 843,
+          "left": -1357,
+          "top": -703,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6714,8 +6598,8 @@
         {
           "objID": "6daab25f-ac94-42d0-85d3-1310c65a49fb",
           "type": "SCPIActionComponent",
-          "left": -1170,
-          "top": 896,
+          "left": -1357,
+          "top": -650,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6728,8 +6612,8 @@
         {
           "objID": "e5ffc2ca-be89-4e7f-ead3-17036f7b317e",
           "type": "SCPIActionComponent",
-          "left": -1170,
-          "top": 949,
+          "left": -1357,
+          "top": -597,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6742,8 +6626,8 @@
         {
           "objID": "f3fd9fd4-554f-43c1-c187-a2908501cc0b",
           "type": "SCPIActionComponent",
-          "left": -1170,
-          "top": 1002,
+          "left": -1357,
+          "top": -544,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6756,13 +6640,190 @@
         {
           "objID": "1cdce66e-50e8-4f32-c67f-8117e9f1ddda",
           "type": "DelayActionComponent",
-          "left": -741,
-          "top": 761,
+          "left": -1017,
+          "top": -785,
           "width": 243,
           "height": 54,
           "customInputs": [],
           "customOutputs": [],
           "milliseconds": "test_params_arr[i].time_delay*1000"
+        },
+        {
+          "objID": "05831673-2489-470b-9557-b1e2b8a000a2",
+          "type": "ButtonDashboardWidget",
+          "left": 675,
+          "top": 528,
+          "width": 80,
+          "height": 60,
+          "customInputs": [],
+          "customOutputs": [],
+          "data": "\"NEXT\"",
+          "style": {
+            "objID": "6e09471a-64a5-423f-933d-b08351182bbb",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": [],
+            "backgroundColor": "#ffff00"
+          },
+          "timeline": [],
+          "eventHandlers": [
+            {
+              "objID": "bedd1472-a33d-44a2-a2f3-54fc24d9f661",
+              "eventName": "CLICKED",
+              "handlerType": "flow"
+            }
+          ],
+          "enabled": "continue && !next",
+          "disabledStyle": {
+            "objID": "a15155f6-6025-42e9-9de9-bc1a98c992f7",
+            "useStyle": "default",
+            "conditionalStyles": [],
+            "childStyles": []
+          }
+        },
+        {
+          "objID": "33f25607-54f7-47fd-f26c-dab8d2471540",
+          "type": "SetVariableActionComponent",
+          "left": 862,
+          "top": 531,
+          "width": 116,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "dc71fbf0-7df5-4027-dd27-e473682c215f",
+              "variable": "next",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "objID": "b0fbd457-01db-4720-a584-a541dac86059",
+          "type": "SetVariableActionComponent",
+          "left": -1225,
+          "top": 55,
+          "width": 320,
+          "height": 95,
+          "customInputs": [
+            {
+              "objID": "d09ef10a-e794-4b4c-f70f-73cce7b631d7",
+              "name": "scope_vpp",
+              "type": "float"
+            },
+            {
+              "objID": "60292693-e60b-4093-af15-88ee9f96fb53",
+              "name": "scope_vrms",
+              "type": "float"
+            },
+            {
+              "objID": "e59979e3-0e17-4473-bf79-e39e6537eb61",
+              "name": "scope_freq",
+              "type": "float"
+            }
+          ],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "dc06e457-3900-4ab3-c6f1-62801649e4c4",
+              "variable": "measured_scope_vpp",
+              "value": "scope_vpp"
+            },
+            {
+              "objID": "f8db4f30-2929-4b9e-83b5-4d63144e08d9",
+              "variable": "measured_scope_vrms",
+              "value": "scope_vrms"
+            },
+            {
+              "objID": "1702aaf7-4ec9-4620-c8f6-b952f6d8b608",
+              "variable": "measured_scope_freq",
+              "value": "scope_freq"
+            }
+          ]
+        },
+        {
+          "objID": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
+          "type": "IsTrueActionComponent",
+          "left": -1961,
+          "top": 55,
+          "width": 122,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "scope_ripple"
+        },
+        {
+          "objID": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
+          "type": "SetVariableActionComponent",
+          "left": 813,
+          "top": 643,
+          "width": 109,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "19c26378-24fb-4fa2-a4a6-b9e9ec4f3db1",
+              "variable": "sample",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "objID": "7f424e00-9b05-4c66-8cc2-6189dc5f23cc",
+          "type": "SetVariableActionComponent",
+          "left": 1015,
+          "top": 531,
+          "width": 116,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "c9f0a0d4-9f4e-4f22-f39d-ebd6c339c857",
+              "variable": "sample",
+              "value": "+1"
+            }
+          ]
+        },
+        {
+          "objID": "d18acda6-a799-4b7c-f0db-b2c28c3a63ad",
+          "type": "IsTrueActionComponent",
+          "left": -1937,
+          "top": -623,
+          "width": 87,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "next"
+        },
+        {
+          "objID": "f3bd38f2-c18a-423c-9aae-fcf92b8a5261",
+          "type": "SetVariableActionComponent",
+          "left": -2107,
+          "top": -623,
+          "width": 122,
+          "height": 55,
+          "customInputs": [],
+          "customOutputs": [],
+          "entries": [
+            {
+              "objID": "61c5454b-6fdd-473a-87db-94a1d83b0d82",
+              "variable": "next",
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "objID": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "type": "CounterActionComponent",
+          "left": -2150,
+          "top": -182,
+          "width": 87,
+          "height": 54,
+          "customInputs": [],
+          "customOutputs": [],
+          "countValue": "5"
         }
       ],
       "connectionLines": [
@@ -6788,20 +6849,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "f0f82249-3411-494b-a667-4a5aba93ab32",
-          "source": "31fd2ed3-083e-42b6-f1cf-d79e53a0faa6",
-          "output": "True",
-          "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
-          "input": "@seqin"
-        },
-        {
-          "objID": "24650575-7d0a-45e7-9feb-88e0bed4af0f",
-          "source": "7a45f7b4-54f1-4360-e9ec-32dbbcef30c1",
-          "output": "@seqout",
-          "target": "31fd2ed3-083e-42b6-f1cf-d79e53a0faa6",
-          "input": "@seqin"
-        },
-        {
           "objID": "8f860868-8534-445a-ae5a-0bb6b81acea7",
           "source": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
           "output": "psu_current",
@@ -6816,13 +6863,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "c5eccc14-9779-479f-a7da-8d2b716298c7",
-          "source": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
-          "output": "@seqout",
-          "target": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
-          "input": "@seqin"
-        },
-        {
           "objID": "e79ad65a-a78d-4e52-8122-400684bc8e61",
           "source": "6141e6c2-7519-4217-9a1c-68db085e88f9",
           "output": "file_path",
@@ -6834,13 +6874,6 @@
           "source": "b9f10a5e-cdd6-469e-ae19-815505993018",
           "output": "CLICKED",
           "target": "6141e6c2-7519-4217-9a1c-68db085e88f9",
-          "input": "@seqin"
-        },
-        {
-          "objID": "e73f49d8-17dd-4214-8ce0-a46ec4f4cd8c",
-          "source": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
-          "output": "@seqout",
-          "target": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
           "input": "@seqin"
         },
         {
@@ -6890,13 +6923,6 @@
           "source": "e94815af-1ae2-4353-ec52-21dd72ff2024",
           "output": "CLICKED",
           "target": "1719917a-d788-4837-c083-91648a303065",
-          "input": "@seqin"
-        },
-        {
-          "objID": "2341b5d2-e1f2-4d8f-da9c-0dcbea1e31a5",
-          "source": "1719917a-d788-4837-c083-91648a303065",
-          "output": "@seqout",
-          "target": "92d7e048-c787-4acc-b082-58df9894188c",
           "input": "@seqin"
         },
         {
@@ -6968,41 +6994,6 @@
           "output": "load_power",
           "target": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
           "input": "load_power"
-        },
-        {
-          "objID": "d37c9f66-d1e7-4ef4-89ff-f0b904a9f923",
-          "source": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
-          "output": "@seqout",
-          "target": "e8136412-39eb-45da-bed2-6576cc31150b",
-          "input": "@seqin"
-        },
-        {
-          "objID": "87ccec35-ecc8-4920-8a60-f139039f6241",
-          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
-          "output": "@seqout",
-          "target": "7a45f7b4-54f1-4360-e9ec-32dbbcef30c1",
-          "input": "@seqin"
-        },
-        {
-          "objID": "5452f750-eb19-4e33-8b6e-a1c94edbf6eb",
-          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
-          "output": "scope_vpp",
-          "target": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
-          "input": "scope_vpp"
-        },
-        {
-          "objID": "4570ab07-d0fd-4e02-f3db-350527fe9df4",
-          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
-          "output": "scope_vrms",
-          "target": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
-          "input": "scope_vrms"
-        },
-        {
-          "objID": "9a09be7d-d208-482e-f234-109adadfec7c",
-          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
-          "output": "scope_freq",
-          "target": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
-          "input": "scope_freq"
         },
         {
           "objID": "9a708e86-23ca-49f5-f35b-a0a09d975a5a",
@@ -7185,6 +7176,139 @@
           "output": "@seqout",
           "target": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
           "input": "next"
+        },
+        {
+          "objID": "0d90d857-c260-495d-cac3-d338798769ae",
+          "source": "05831673-2489-470b-9557-b1e2b8a000a2",
+          "output": "CLICKED",
+          "target": "33f25607-54f7-47fd-f26c-dab8d2471540",
+          "input": "@seqin"
+        },
+        {
+          "objID": "a1f6aaee-727c-4bf2-9dd7-d15172212ec7",
+          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
+          "output": "scope_vpp",
+          "target": "b0fbd457-01db-4720-a584-a541dac86059",
+          "input": "scope_vpp"
+        },
+        {
+          "objID": "b75b1307-95f0-4efe-9859-b15e3ca6c51e",
+          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
+          "output": "scope_vrms",
+          "target": "b0fbd457-01db-4720-a584-a541dac86059",
+          "input": "scope_vrms"
+        },
+        {
+          "objID": "f2cd55f3-6326-4a8e-c4c2-03fde4171df1",
+          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
+          "output": "scope_freq",
+          "target": "b0fbd457-01db-4720-a584-a541dac86059",
+          "input": "scope_freq"
+        },
+        {
+          "objID": "9ada9e1c-d1e9-4b75-8bbb-38da5de5a152",
+          "source": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
+          "output": "True",
+          "target": "e8136412-39eb-45da-bed2-6576cc31150b",
+          "input": "@seqin"
+        },
+        {
+          "objID": "849c7697-4e7d-404e-d7e4-58cfc2ea1e05",
+          "source": "b0fbd457-01db-4720-a584-a541dac86059",
+          "output": "@seqout",
+          "target": "eafcbb71-0573-47f9-b51c-a41210752e4a",
+          "input": "@seqin"
+        },
+        {
+          "objID": "e6d1ec9b-d19f-4b21-e56f-d83739f645ef",
+          "source": "96317214-7add-414f-98f9-6a09fa170537",
+          "output": "@seqout",
+          "target": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
+          "input": "@seqin"
+        },
+        {
+          "objID": "311b7376-8e5b-4f3d-e3ae-f177e938d221",
+          "source": "96317214-7add-414f-98f9-6a09fa170537",
+          "output": "@seqout",
+          "target": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6efb2009-532e-4ad7-da19-b9ecd51d45f9",
+          "source": "1719917a-d788-4837-c083-91648a303065",
+          "output": "@seqout",
+          "target": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f09311f1-49d4-412e-c2ce-75fbfe6aea47",
+          "source": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
+          "output": "@seqout",
+          "target": "92d7e048-c787-4acc-b082-58df9894188c",
+          "input": "@seqin"
+        },
+        {
+          "objID": "c3d938dd-c4d5-4cb2-f4be-c5255ec199a1",
+          "source": "33f25607-54f7-47fd-f26c-dab8d2471540",
+          "output": "@seqout",
+          "target": "7f424e00-9b05-4c66-8cc2-6189dc5f23cc",
+          "input": "@seqin"
+        },
+        {
+          "objID": "f874c455-8a89-4613-b5e1-84a89afafc10",
+          "source": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
+          "output": "done",
+          "target": "f3bd38f2-c18a-423c-9aae-fcf92b8a5261",
+          "input": "@seqin"
+        },
+        {
+          "objID": "4734004c-dfd9-453f-e646-7e4d4d0db8b6",
+          "source": "f3bd38f2-c18a-423c-9aae-fcf92b8a5261",
+          "output": "@seqout",
+          "target": "d18acda6-a799-4b7c-f0db-b2c28c3a63ad",
+          "input": "@seqin"
+        },
+        {
+          "objID": "fa15069b-a74c-4072-ccf4-cb59dcdd7424",
+          "source": "d18acda6-a799-4b7c-f0db-b2c28c3a63ad",
+          "output": "True",
+          "target": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
+          "input": "start"
+        },
+        {
+          "objID": "7a1bec13-0c21-4a93-8e1d-db609f81991e",
+          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "output": "@seqout",
+          "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
+          "input": "@seqin"
+        },
+        {
+          "objID": "b6d91c42-e4c3-4279-cdf7-fbc3af28045b",
+          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "output": "@seqout",
+          "target": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
+          "input": "@seqin"
+        },
+        {
+          "objID": "d13f59eb-81b5-4c74-f293-b7c68c0117d8",
+          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "output": "@seqout",
+          "target": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6f35bea3-6958-4537-b107-9b2b69d9b5d5",
+          "source": "6018e97f-8a73-443d-c90b-2148d2ca4d06",
+          "output": "@seqout",
+          "target": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "input": "@seqin"
+        },
+        {
+          "objID": "5cf130b9-0de1-4b6f-d692-5ba3a483e120",
+          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
+          "output": "done",
+          "target": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
+          "input": "next"
         }
       ],
       "localVariables": [
@@ -7193,6 +7317,14 @@
           "name": "continue",
           "type": "boolean",
           "defaultValue": "false"
+        },
+        {
+          "objID": "cc94ba61-0f54-4585-e3fc-cc091789fe18",
+          "name": "next",
+          "type": "boolean",
+          "defaultValue": "false",
+          "persistent": false,
+          "native": false
         }
       ],
       "name": "Production Batch Testing Measurement",
