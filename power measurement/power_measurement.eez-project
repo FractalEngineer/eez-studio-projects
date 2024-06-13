@@ -6353,8 +6353,8 @@
         {
           "objID": "b39a7496-ebbf-4e43-f479-e34dc18537dc",
           "type": "LabelInActionComponent",
-          "left": -2660,
-          "top": 381,
+          "left": -2606,
+          "top": -753,
           "width": 87,
           "height": 24,
           "customInputs": [],
@@ -6364,10 +6364,10 @@
         {
           "objID": "1719917a-d788-4837-c083-91648a303065",
           "type": "SetVariableActionComponent",
-          "left": 630,
+          "left": 615,
           "top": 643,
           "width": 140,
-          "height": 55,
+          "height": 95,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
@@ -6375,14 +6375,24 @@
               "objID": "0e1f7257-251f-4676-eb92-d1740e797289",
               "variable": "continue",
               "value": "true"
+            },
+            {
+              "objID": "e82265dd-98ad-47df-a381-569ae5ba90e4",
+              "variable": "sample",
+              "value": "1"
+            },
+            {
+              "objID": "41e85306-8625-43eb-ae3a-235190eee2aa",
+              "variable": "dut",
+              "value": "true"
             }
           ]
         },
         {
           "objID": "92d7e048-c787-4acc-b082-58df9894188c",
           "type": "LabelOutActionComponent",
-          "left": 1303,
-          "top": 647,
+          "left": 1170,
+          "top": 654,
           "width": 87,
           "height": 24,
           "customInputs": [],
@@ -6441,8 +6451,8 @@
         {
           "objID": "160b200a-404c-41db-dfff-466087694693",
           "type": "SCPIActionComponent",
-          "left": -2527,
-          "top": 381,
+          "left": -2473,
+          "top": -753,
           "width": 97,
           "height": 54,
           "customInputs": [],
@@ -6455,8 +6465,8 @@
         {
           "objID": "96317214-7add-414f-98f9-6a09fa170537",
           "type": "DelayActionComponent",
-          "left": -2389,
-          "top": 486,
+          "left": -2335,
+          "top": -648,
           "width": 87,
           "height": 54,
           "customInputs": [],
@@ -6466,8 +6476,8 @@
         {
           "objID": "98fe8311-0ea2-40b0-ff59-486ee162c511",
           "type": "SCPIActionComponent",
-          "left": -2600,
-          "top": 479,
+          "left": -2546,
+          "top": -655,
           "width": 170,
           "height": 67,
           "customInputs": [],
@@ -6480,8 +6490,8 @@
         {
           "objID": "04965d77-b9f9-40bd-8998-54955f488f2b",
           "type": "DelayActionComponent",
-          "left": -2398,
-          "top": 386,
+          "left": -2344,
+          "top": -748,
           "width": 87,
           "height": 54,
           "customInputs": [],
@@ -6521,7 +6531,7 @@
           "objID": "e7b9b6f0-20f4-4aeb-b906-8c8d78c46474",
           "type": "SwitchActionComponent",
           "left": -1455,
-          "top": -600,
+          "top": -570,
           "width": 188,
           "height": 111,
           "customInputs": [],
@@ -6555,7 +6565,7 @@
           "objID": "e33573c4-a72f-4e67-ed6d-24dd4fbdb910",
           "type": "SCPIActionComponent",
           "left": -1213,
-          "top": -627,
+          "top": -597,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6569,7 +6579,7 @@
           "objID": "6daab25f-ac94-42d0-85d3-1310c65a49fb",
           "type": "SCPIActionComponent",
           "left": -1213,
-          "top": -574,
+          "top": -544,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6583,7 +6593,7 @@
           "objID": "e5ffc2ca-be89-4e7f-ead3-17036f7b317e",
           "type": "SCPIActionComponent",
           "left": -1213,
-          "top": -521,
+          "top": -491,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6597,7 +6607,7 @@
           "objID": "f3fd9fd4-554f-43c1-c187-a2908501cc0b",
           "type": "SCPIActionComponent",
           "left": -1213,
-          "top": -468,
+          "top": -438,
           "width": 256,
           "height": 54,
           "customInputs": [],
@@ -6657,7 +6667,7 @@
           "left": 862,
           "top": 531,
           "width": 165,
-          "height": 75,
+          "height": 95,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
@@ -6670,6 +6680,11 @@
               "objID": "1c260880-f2ed-4377-f729-dcd9c51ba3d0",
               "variable": "sample",
               "value": "sample + 1"
+            },
+            {
+              "objID": "05cedbdf-f895-4385-d76f-c9215bea9ab4",
+              "variable": "dut",
+              "value": "true"
             }
           ]
         },
@@ -6728,34 +6743,6 @@
           "value": "scope_ripple"
         },
         {
-          "objID": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
-          "type": "SetVariableActionComponent",
-          "left": 813,
-          "top": 643,
-          "width": 109,
-          "height": 55,
-          "customInputs": [],
-          "customOutputs": [],
-          "entries": [
-            {
-              "objID": "19c26378-24fb-4fa2-a4a6-b9e9ec4f3db1",
-              "variable": "sample",
-              "value": "1"
-            }
-          ]
-        },
-        {
-          "objID": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
-          "type": "CounterActionComponent",
-          "left": -2158,
-          "top": -114,
-          "width": 87,
-          "height": 54,
-          "customInputs": [],
-          "customOutputs": [],
-          "countValue": "4"
-        },
-        {
           "objID": "6de8a8d8-f95c-4256-9115-a2bddba48e7e",
           "type": "CommentActionComponent",
           "left": -1632,
@@ -6780,8 +6767,8 @@
         {
           "objID": "fa806934-6472-453b-9689-6e81c054404d",
           "type": "DelayActionComponent",
-          "left": -2311,
-          "top": -104,
+          "left": -2335,
+          "top": -196,
           "width": 87,
           "height": 54,
           "customInputs": [],
@@ -6833,7 +6820,7 @@
           "left": -1875,
           "top": -570,
           "width": 122,
-          "height": 75,
+          "height": 95,
           "customInputs": [],
           "customOutputs": [],
           "entries": [
@@ -6846,25 +6833,19 @@
               "objID": "9e6b2187-11d8-4719-e1dc-70d017e66f26",
               "variable": "next",
               "value": "false"
+            },
+            {
+              "objID": "d4b36d31-0913-4438-f4fd-7ba613152b74",
+              "variable": "dut",
+              "value": "false"
             }
           ]
         },
         {
-          "objID": "e2fef959-7670-4aec-f812-d05cca56023a",
-          "type": "IsTrueActionComponent",
-          "left": -1528,
-          "top": 300,
-          "width": 87,
-          "height": 70,
-          "customInputs": [],
-          "customOutputs": [],
-          "value": "next"
-        },
-        {
           "objID": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
           "type": "IsTrueActionComponent",
-          "left": 957,
-          "top": 658,
+          "left": 800,
+          "top": 643,
           "width": 116,
           "height": 70,
           "customInputs": [],
@@ -6874,8 +6855,8 @@
         {
           "objID": "68f26705-4275-4601-dbc2-cbf3801a2ca3",
           "type": "FileWrite",
-          "left": 1131,
-          "top": 671,
+          "left": 980,
+          "top": 654,
           "width": 129,
           "height": 54,
           "customInputs": [
@@ -6893,13 +6874,24 @@
         {
           "objID": "4a03ee24-4523-48a8-95bc-1ec98ed19c31",
           "type": "LabelInActionComponent",
-          "left": -2703,
-          "top": 276,
+          "left": -2649,
+          "top": -858,
           "width": 87,
           "height": 24,
           "customInputs": [],
           "customOutputs": [],
           "label": "Next"
+        },
+        {
+          "objID": "18ebc4b6-a4bd-4e08-909d-ea8f698e0821",
+          "type": "IsTrueActionComponent",
+          "left": -2135,
+          "top": -217,
+          "width": 87,
+          "height": 70,
+          "customInputs": [],
+          "customOutputs": [],
+          "value": "dut"
         }
       ],
       "connectionLines": [
@@ -7107,13 +7099,6 @@
           "input": "@seqin"
         },
         {
-          "objID": "1f2b9f9f-b689-46c2-f769-42b0b7772475",
-          "source": "96317214-7add-414f-98f9-6a09fa170537",
-          "output": "@seqout",
-          "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
-          "input": "@seqin"
-        },
-        {
           "objID": "f4b1947c-53fa-4234-abfa-5d3bcfd84fc6",
           "source": "98fe8311-0ea2-40b0-ff59-486ee162c511",
           "output": "@seqout",
@@ -7177,43 +7162,8 @@
           "input": "@seqin"
         },
         {
-          "objID": "33e675c1-73f9-4518-8880-ed9100af5f53",
-          "source": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
-          "output": "@seqout",
-          "target": "e7b9b6f0-20f4-4aeb-b906-8c8d78c46474",
-          "input": "@seqin"
-        },
-        {
           "objID": "81b73283-a2ba-446b-959c-6b862c284766",
           "source": "7946318e-f989-421c-9535-36e1558f2e5a",
-          "output": "@seqout",
-          "target": "1cdce66e-50e8-4f32-c67f-8117e9f1ddda",
-          "input": "@seqin"
-        },
-        {
-          "objID": "24e7174a-418f-4844-e4c6-e3008dfb22b4",
-          "source": "e33573c4-a72f-4e67-ed6d-24dd4fbdb910",
-          "output": "@seqout",
-          "target": "1cdce66e-50e8-4f32-c67f-8117e9f1ddda",
-          "input": "@seqin"
-        },
-        {
-          "objID": "6a62506a-54dc-4929-c74b-11738ff6dece",
-          "source": "6daab25f-ac94-42d0-85d3-1310c65a49fb",
-          "output": "@seqout",
-          "target": "1cdce66e-50e8-4f32-c67f-8117e9f1ddda",
-          "input": "@seqin"
-        },
-        {
-          "objID": "9e7cb7c8-25b4-490d-aae4-030a693b1b63",
-          "source": "e5ffc2ca-be89-4e7f-ead3-17036f7b317e",
-          "output": "@seqout",
-          "target": "1cdce66e-50e8-4f32-c67f-8117e9f1ddda",
-          "input": "@seqin"
-        },
-        {
-          "objID": "7508f5bb-2d2b-4375-db36-5bee3d1016f0",
-          "source": "f3fd9fd4-554f-43c1-c187-a2908501cc0b",
           "output": "@seqout",
           "target": "1cdce66e-50e8-4f32-c67f-8117e9f1ddda",
           "input": "@seqin"
@@ -7254,66 +7204,10 @@
           "input": "@seqin"
         },
         {
-          "objID": "e6d1ec9b-d19f-4b21-e56f-d83739f645ef",
-          "source": "96317214-7add-414f-98f9-6a09fa170537",
-          "output": "@seqout",
-          "target": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
-          "input": "@seqin"
-        },
-        {
-          "objID": "311b7376-8e5b-4f3d-e3ae-f177e938d221",
-          "source": "96317214-7add-414f-98f9-6a09fa170537",
-          "output": "@seqout",
-          "target": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
-          "input": "@seqin"
-        },
-        {
-          "objID": "6efb2009-532e-4ad7-da19-b9ecd51d45f9",
-          "source": "1719917a-d788-4837-c083-91648a303065",
-          "output": "@seqout",
-          "target": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
-          "input": "@seqin"
-        },
-        {
-          "objID": "7a1bec13-0c21-4a93-8e1d-db609f81991e",
-          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
-          "output": "@seqout",
-          "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
-          "input": "@seqin"
-        },
-        {
-          "objID": "b6d91c42-e4c3-4279-cdf7-fbc3af28045b",
-          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
-          "output": "@seqout",
-          "target": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
-          "input": "@seqin"
-        },
-        {
-          "objID": "d13f59eb-81b5-4c74-f293-b7c68c0117d8",
-          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
-          "output": "@seqout",
-          "target": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
-          "input": "@seqin"
-        },
-        {
-          "objID": "5cf130b9-0de1-4b6f-d692-5ba3a483e120",
-          "source": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
-          "output": "done",
-          "target": "7e33d69b-c0dc-45f0-d09c-7d2e1b58c5ba",
-          "input": "next"
-        },
-        {
           "objID": "dc2a99cf-54b8-4528-c8ec-7e4c90ba96d4",
           "source": "8eaee4fc-92e1-4a35-fcfd-e6abe7cdff4d",
           "output": "@seqout",
           "target": "1dd0ce63-5293-4fc1-bd5c-6ca65432a320",
-          "input": "@seqin"
-        },
-        {
-          "objID": "990f5015-f29b-4c57-d03f-e401f0835962",
-          "source": "fa806934-6472-453b-9689-6e81c054404d",
-          "output": "@seqout",
-          "target": "481a0b59-fde2-480e-c34f-a0d8f8c88365",
           "input": "@seqin"
         },
         {
@@ -7324,31 +7218,10 @@
           "input": "@seqin"
         },
         {
-          "objID": "e8136848-e16f-4c30-c1d2-c31847559290",
-          "source": "e2fef959-7670-4aec-f812-d05cca56023a",
-          "output": "True",
-          "target": "fa806934-6472-453b-9689-6e81c054404d",
-          "input": "@seqin"
-        },
-        {
-          "objID": "f9a50012-8a4f-46d7-97e1-e320ba9f575e",
-          "source": "6018e97f-8a73-443d-c90b-2148d2ca4d06",
-          "output": "@seqout",
-          "target": "e2fef959-7670-4aec-f812-d05cca56023a",
-          "input": "@seqin"
-        },
-        {
           "objID": "c3d021f8-a23f-493a-fe56-0ab0f4645873",
           "source": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
           "output": "True",
           "target": "68f26705-4275-4601-dbc2-cbf3801a2ca3",
-          "input": "@seqin"
-        },
-        {
-          "objID": "f525d114-d584-45f5-e84f-fd6f47929262",
-          "source": "5620191b-61c8-4e5b-a865-ade7ccad01bd",
-          "output": "@seqout",
-          "target": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
           "input": "@seqin"
         },
         {
@@ -7399,6 +7272,69 @@
           "output": "@seqout",
           "target": "9078d892-f131-463a-e5cb-1f6fb55abc50",
           "input": "@seqin"
+        },
+        {
+          "objID": "bb3210e8-3c12-4217-cde8-0a892d935df4",
+          "source": "1719917a-d788-4837-c083-91648a303065",
+          "output": "@seqout",
+          "target": "efcfc18d-eaf8-460c-ee5f-475d31628f3d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "26dd381d-565c-4d3e-99f3-2537df4d8727",
+          "source": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
+          "output": "@seqout",
+          "target": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
+          "input": "@seqin"
+        },
+        {
+          "objID": "cefc49ab-d90e-4e29-a498-f7092ac397a6",
+          "source": "c4869b2e-8a44-4d43-e1f7-41a9d33b0ac1",
+          "output": "@seqout",
+          "target": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
+          "input": "@seqin"
+        },
+        {
+          "objID": "a87e771f-7638-43aa-ffbd-27951b7d426e",
+          "source": "96317214-7add-414f-98f9-6a09fa170537",
+          "output": "@seqout",
+          "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
+          "input": "@seqin"
+        },
+        {
+          "objID": "dfd2a7c0-d8e3-4ca4-f6b2-555580f77c34",
+          "source": "e8136412-39eb-45da-bed2-6576cc31150b",
+          "output": "@seqout",
+          "target": "fa806934-6472-453b-9689-6e81c054404d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "9d5c3fc9-30fd-425a-ec30-2d26efa7fa2d",
+          "source": "a1818ef1-33e1-4d0b-adbe-e824bd0738d0",
+          "output": "False",
+          "target": "fa806934-6472-453b-9689-6e81c054404d",
+          "input": "@seqin"
+        },
+        {
+          "objID": "0a77fc38-5755-4bbd-8494-83f7d6d810b4",
+          "source": "7946318e-f989-421c-9535-36e1558f2e5a",
+          "output": "@seqout",
+          "target": "e7b9b6f0-20f4-4aeb-b906-8c8d78c46474",
+          "input": "@seqin"
+        },
+        {
+          "objID": "b80fd924-9ae4-463e-b8d4-83621b936baf",
+          "source": "fa806934-6472-453b-9689-6e81c054404d",
+          "output": "@seqout",
+          "target": "18ebc4b6-a4bd-4e08-909d-ea8f698e0821",
+          "input": "@seqin"
+        },
+        {
+          "objID": "6a33a07e-cd3e-4d36-e5a0-ec67c71b38ac",
+          "source": "18ebc4b6-a4bd-4e08-909d-ea8f698e0821",
+          "output": "True",
+          "target": "ab7a3eeb-76d1-4268-a0df-d8341fee8cd2",
+          "input": "@seqin"
         }
       ],
       "localVariables": [
@@ -7411,6 +7347,14 @@
         {
           "objID": "cc94ba61-0f54-4585-e3fc-cc091789fe18",
           "name": "next",
+          "type": "boolean",
+          "defaultValue": "false",
+          "persistent": false,
+          "native": false
+        },
+        {
+          "objID": "d4122993-4cdb-463f-e8db-a2b0104b2fa2",
+          "name": "dut",
           "type": "boolean",
           "defaultValue": "false",
           "persistent": false,
