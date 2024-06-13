@@ -6657,7 +6657,7 @@
           "height": 60,
           "customInputs": [],
           "customOutputs": [],
-          "data": "\"NEXT\"",
+          "data": "\"NEXT SAMPLE\"",
           "style": {
             "objID": "6e09471a-64a5-423f-933d-b08351182bbb",
             "useStyle": "default",
@@ -6824,6 +6824,28 @@
           "customInputs": [],
           "customOutputs": [],
           "countValue": "5"
+        },
+        {
+          "objID": "6de8a8d8-f95c-4256-9115-a2bddba48e7e",
+          "type": "CommentActionComponent",
+          "left": -1776,
+          "top": -884,
+          "width": 638,
+          "height": 56,
+          "customInputs": [],
+          "customOutputs": [],
+          "text": "<div><!--block-->Command loop: sends the instrument commands according to the configuration array line</div>"
+        },
+        {
+          "objID": "e632b77f-8d8f-4c44-d07b-4849a7da3bba",
+          "type": "CommentActionComponent",
+          "left": -1371,
+          "top": -238,
+          "width": 476,
+          "height": 56,
+          "customInputs": [],
+          "customOutputs": [],
+          "text": "<div><!--block-->Measuring loop: logs instrument queries in the log file for every command loop</div>"
         }
       ],
       "connectionLines": [
