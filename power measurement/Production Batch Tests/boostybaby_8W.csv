@@ -1,0 +1,5 @@
+test_voltage, load_mode, load_value, time_delay
+4.35,3,8,3
+4,3,8,3
+3.5,3,8,3
+3,3,8,3
