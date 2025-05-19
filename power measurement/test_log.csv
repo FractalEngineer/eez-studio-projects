@@ -1,3 +1,0 @@
-test voltage,psu_voltage,psu_current,psu_power,load_voltage,load_current,load_power,scope_vpp,scope_vrms,scope_freq
-4.35,4.352,1.2072,5.28,5.064,0.996,5.03,0.052715,0.0088045,2.4528e+07
-4.35,4.344,1.2087,5.284,5.062,0.996,5.03,0.052715,0.0088045,2.4528e+07
